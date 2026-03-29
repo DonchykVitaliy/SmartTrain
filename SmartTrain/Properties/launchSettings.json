@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SmartTrain (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "SmartTrain (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

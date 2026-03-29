@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="SmartTrain.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SmartTrain"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Padding="30">
+        <StackPanel Spacing="15">
+            <TextBlock x:Name="DateText" FontSize="18" Foreground="Gray"/>
+
+            <TextBlock x:Name="GreetingText" FontSize="36" FontWeight="Bold"/>
+
+            <TextBlock Text="Готовий стати кращою версією себе сьогодні? Твій план вже чекає!" 
+                   FontSize="16" FontStyle="Italic" Foreground="LightGray" Margin="0,0,0,20"/>
+
+            <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                BorderThickness="1" CornerRadius="12" Padding="20" Width="300" HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal" Spacing="20">
+                    <TextBlock Text="🔥" FontSize="50" VerticalAlignment="Center"/>
+
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="Серія тренувань" FontSize="16" Foreground="Gray"/>
+
+                        <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Bottom">
+                            <TextBlock x:Name="CurrentStreakText" Text="0" FontSize="32" FontWeight="Bold"/>
+                            <TextBlock Text="днів" FontSize="16" VerticalAlignment="Bottom" Margin="0,0,0,6"/>
+                        </StackPanel>
+
+                        <TextBlock x:Name="RecordStreakText" Text="Рекорд: 0" FontSize="12" Foreground="Gray" Margin="0,5,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Page>
