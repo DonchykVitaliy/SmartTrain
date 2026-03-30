@@ -275,3 +275,9 @@ D:\ЛАБИ\КУРСОВА\projects\SmartTrain\SmartTrain\obj\x64\Debug\net8.0-w
 D:\ЛАБИ\КУРСОВА\projects\SmartTrain\SmartTrain\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\HomePage.g.cs
 D:\ЛАБИ\КУРСОВА\projects\SmartTrain\SmartTrain\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\HomePage.xaml
 D:\ЛАБИ\КУРСОВА\projects\SmartTrain\SmartTrain\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\HomePage.xbf
+D:\ЛАБИ\КУРСОВА\projects\SmartTrain\SmartTrain\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\SmartTrain.sourcelink.json
+D:\ЛАБИ\КУРСОВА\projects\SmartTrain\SmartTrain\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\GoalPage.xbf
+D:\ЛАБИ\КУРСОВА\projects\SmartTrain\SmartTrain\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\GoalPage.g.i.cs
+D:\ЛАБИ\КУРСОВА\projects\SmartTrain\SmartTrain\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\GoalPage.g.cs
+D:\ЛАБИ\КУРСОВА\projects\SmartTrain\SmartTrain\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\GoalPage.xaml
+D:\ЛАБИ\КУРСОВА\projects\SmartTrain\SmartTrain\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\GoalPage.xbf

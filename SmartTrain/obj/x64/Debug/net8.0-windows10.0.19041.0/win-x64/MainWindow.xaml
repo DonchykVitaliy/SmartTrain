@@ -24,23 +24,40 @@
 
             <TextBlock Text="Створення профілю Smart Train" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
 
-            <TextBox x:ConnectionId='17' x:Name="RegName" Header="Ваше ім'я" PlaceholderText="Введіть ім'я..."/>
-            <NumberBox x:ConnectionId='18' x:Name="RegAge" Header="Вік" Value="20" SpinButtonPlacementMode="Inline"/>
-            <NumberBox x:ConnectionId='19' x:Name="RegWeight" Header="Вага (кг)" Value="70" SpinButtonPlacementMode="Inline"/>
-            <NumberBox x:ConnectionId='20' x:Name="RegHeight" Header="Зріст (см)" Value="175" SpinButtonPlacementMode="Inline"/>
+            <TextBox x:ConnectionId='18' x:Name="RegName" Header="Ваше ім'я" PlaceholderText="Введіть ім'я..."/>
+            <NumberBox x:ConnectionId='19' x:Name="RegAge" Header="Вік" Value="20" SpinButtonPlacementMode="Inline"/>
+            <NumberBox x:ConnectionId='20' x:Name="RegWeight" Header="Вага (кг)" Value="70" SpinButtonPlacementMode="Inline"/>
+            <NumberBox x:ConnectionId='21' x:Name="RegHeight" Header="Зріст (см)" Value="175" SpinButtonPlacementMode="Inline"/>
 
-            <ComboBox x:ConnectionId='21' x:Name="RegLevel" Header="Фізична підготовка" SelectedIndex="0" HorizontalAlignment="Stretch">
+            <ComboBox x:ConnectionId='22' x:Name="RegLevel" Header="Фізична підготовка" SelectedIndex="0" HorizontalAlignment="Stretch">
                 <ComboBoxItem Content="Початківець"/>
                 <ComboBoxItem Content="Середній"/>
                 <ComboBoxItem Content="Професіонал"/>
             </ComboBox>
-
-            <Button x:ConnectionId='22' Content="Створити профіль" 
-                                      
-            Style="{StaticResource AccentButtonStyle}" 
-            HorizontalAlignment="Right" 
-            Margin="0,10,0,0"/>
         </StackPanel>
+
+        
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,50,0" Canvas.ZIndex="1" Spacing="10">
+            <Button x:ConnectionId='16' x:Name="ChangeGoalButton" 
+                    Visibility="Collapsed"
+                                                  >
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <SymbolIcon Symbol="Edit"/>
+                    <TextBlock Text="Змінити ціль"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:ConnectionId='17' x:Name="BuildPlanButton" 
+                                                 
+                    Style="{StaticResource AccentButtonStyle}">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <SymbolIcon Symbol="Target"/>
+                    <TextBlock Text="Побудувати план"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
 
         <TeachingTip x:ConnectionId='3' x:Name="PlanSuccessTip"
              Title="Успіх!"
@@ -52,20 +69,9 @@
             </TeachingTip.IconSource>
         </TeachingTip>
 
-        <Button x:ConnectionId='4' x:Name="BuildPlanButton" 
-                                     
-        HorizontalAlignment="Right" 
-        VerticalAlignment="Top" 
-        Margin="0,10,50,0" 
-        Canvas.ZIndex="1"
-        Style="{StaticResource AccentButtonStyle}">
-            <StackPanel Orientation="Horizontal" Spacing="8">
-                <SymbolIcon Symbol="Target"/>
-                <TextBlock Text="Побудувати план"/>
-            </StackPanel>
-        </Button>
+        
 
-        <NavigationView x:ConnectionId='5' x:Name="MainNav" 
+        <NavigationView x:ConnectionId='4' x:Name="MainNav" 
                         PaneTitle="Smart Train Menu"
                         IsSettingsVisible="True"
                         Background="Transparent"
@@ -75,18 +81,19 @@
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Головна сторінка" Icon="Home" Tag="HomePage"/>
                 <NavigationViewItem Content="Тренування" Icon="Target" Tag="WorkoutPage"/>
+                <NavigationViewItem Content="Ціль" Icon="Target" Tag="GoalPage"/>
                 <NavigationViewItem Content="Статистика" Icon="FourBars" Tag="StatsPage"/>
                 <NavigationViewItem Content="Досягнення" Icon="Favorite" Tag="AchievementsPage"/>
             </NavigationView.MenuItems>
 
             <NavigationView.PaneFooter>
-                <NavigationViewItem x:ConnectionId='15' x:Name="ProfileItem" Content="Мій Профіль" Icon="Contact"                            />
+                <NavigationViewItem x:ConnectionId='14' x:Name="ProfileItem" Content="Мій Профіль" Icon="Contact"                            />
             </NavigationView.PaneFooter>
 
-            <Frame x:ConnectionId='16' x:Name="ContentFrame" Margin="24"/>
+            <Frame x:ConnectionId='15' x:Name="ContentFrame" Margin="24"/>
         </NavigationView>
 
-        <ContentDialog x:ConnectionId='6' x:Name="EditProfileDialog"
+        <ContentDialog x:ConnectionId='5' x:Name="EditProfileDialog"
                Title="Редагування профілю"
                PrimaryButtonText="Зберегти"
                SecondaryButtonText="Скасувати"
@@ -95,11 +102,11 @@
                                                                         
                                                                     >
             <StackPanel Spacing="10" Width="300">
-                <TextBox x:ConnectionId='10' x:Name="EditName" Header="Ім'я"/>
-                <NumberBox x:ConnectionId='11' x:Name="EditAge" Header="Вік" SpinButtonPlacementMode="Inline"/>
-                <NumberBox x:ConnectionId='12' x:Name="EditWeight" Header="Вага (кг)" SpinButtonPlacementMode="Inline"/>
-                <NumberBox x:ConnectionId='13' x:Name="EditHeight" Header="Зріст (см)" SpinButtonPlacementMode="Inline"/>
-                <ComboBox x:ConnectionId='14' x:Name="EditLevel" Header="Рівень підготовки" HorizontalAlignment="Stretch">
+                <TextBox x:ConnectionId='9' x:Name="EditName" Header="Ім'я"/>
+                <NumberBox x:ConnectionId='10' x:Name="EditAge" Header="Вік" SpinButtonPlacementMode="Inline"/>
+                <NumberBox x:ConnectionId='11' x:Name="EditWeight" Header="Вага (кг)" SpinButtonPlacementMode="Inline"/>
+                <NumberBox x:ConnectionId='12' x:Name="EditHeight" Header="Зріст (см)" SpinButtonPlacementMode="Inline"/>
+                <ComboBox x:ConnectionId='13' x:Name="EditLevel" Header="Рівень підготовки" HorizontalAlignment="Stretch">
                     <ComboBoxItem Content="Початківець"/>
                     <ComboBoxItem Content="Середній"/>
                     <ComboBoxItem Content="Професіонал"/>
@@ -107,18 +114,18 @@
             </StackPanel>
         </ContentDialog>
 
-        <ContentDialog x:ConnectionId='7' x:Name="BuildPlanDialog"
+        <ContentDialog x:ConnectionId='6' x:Name="BuildPlanDialog"
                Title="Параметри нового плану"
                PrimaryButtonText="Сформувати"
                CloseButtonText="Скасувати"
                                                                       >
             <StackPanel Spacing="15" Width="300">
-                <ComboBox x:ConnectionId='8' x:Name="SelectLocation" Header="Де ви будете тренуватися?" HorizontalAlignment="Stretch" SelectedIndex="0">
+                <ComboBox x:ConnectionId='7' x:Name="SelectLocation" Header="Де ви будете тренуватися?" HorizontalAlignment="Stretch" SelectedIndex="0">
                     <ComboBoxItem Content="Вдома"/>
                     <ComboBoxItem Content="Спортзал"/>
                 </ComboBox>
 
-                <ComboBox x:ConnectionId='9' x:Name="SelectDifficulty" Header="Бажана складність" HorizontalAlignment="Stretch" SelectedIndex="0">
+                <ComboBox x:ConnectionId='8' x:Name="SelectDifficulty" Header="Бажана складність" HorizontalAlignment="Stretch" SelectedIndex="0">
                     <ComboBoxItem Content="Легко"/>
                     <ComboBoxItem Content="Середньо"/>
                     <ComboBoxItem Content="Важко"/>

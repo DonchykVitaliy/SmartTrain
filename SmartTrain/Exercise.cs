@@ -2,10 +2,21 @@
 
 namespace SmartTrain
 {
+
+    public enum WorkoutGoal
+    {
+        WeightLoss,         // Схуднення та рельєф
+        MuscleGain,         // Набір м'язової маси
+        KeepFit,            // Підтримка форми (тонус)
+        Strength,           // Абсолютна сила
+        HealthAndMobility   // Здоров'я, довголіття, розтяжка
+    }
+
     // Переліки (Enums) краще тримати тут або в окремому файлі для зручності
     public enum DifficultyLevel { Easy, AboveAverage, Hard }
     public enum TrainingType { Home, Gym }
     public enum FitnessLevelRequired { Beginner, Intermediate, Pro }
+    
 
     public sealed class Exercise
     {
@@ -26,6 +37,9 @@ namespace SmartTrain
         public double MaxWeight { get; set; }
         public double MinHeight { get; set; }
         public double MaxHeight { get; set; }
+        public int Sets { get; set; } = 3; // Базова кількість підходів
+        //  цей рядок до інших властивостей вправи
+        public List<WorkoutGoal> SuitableGoals { get; set; } = new List<WorkoutGoal>();
 
         // Порожній конструктор обов'язковий для роботи JSON-серіалізатора
         public Exercise() { }
@@ -74,5 +88,22 @@ public string LevelTranslated => RequiredLevel switch
             $"Рекомендований зріст: {MinHeight} - {MaxHeight} см\n" +
             $"Мінімальний рівень: {LevelTranslated}";
 
+
+        // null - ще не чіпали, true - виконано (галочка), false - пропущено (хрестик)
+        public bool? IsCompleted { get; set; } = null;
+
+        // Колір фону залежно від статусу
+        [System.Text.Json.Serialization.JsonIgnore]
+        public object CardBackground
+        {
+            get
+            {
+                if (IsCompleted == true) return new Microsoft.UI.Xaml.Media.SolidColorBrush(Windows.UI.Color.FromArgb(40, 76, 175, 80)); // Ледве зелений
+                if (IsCompleted == false) return new Microsoft.UI.Xaml.Media.SolidColorBrush(Windows.UI.Color.FromArgb(40, 244, 67, 54)); // Ледве червоний
+                // Стандартний колір картки з теми
+                return Microsoft.UI.Xaml.Application.Current.Resources["CardBackgroundFillColorDefaultBrush"];
+            }
+        }
     }
 }
+

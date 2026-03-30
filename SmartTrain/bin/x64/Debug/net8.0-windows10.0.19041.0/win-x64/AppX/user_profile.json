@@ -3,8 +3,16 @@
   "Age": 20,
   "Weight": 85,
   "Height": 181,
-  "FitnessLevel": "\u0421\u0435\u0440\u0435\u0434\u043D\u0456\u0439",
+  "FitnessLevel": "\u041F\u043E\u0447\u0430\u0442\u043A\u0456\u0432\u0435\u0446\u044C",
   "CurrentStreak": 0,
   "RecordStreak": 0,
-  "CreatedAt": "2026-03-29T16:51:53.7759716+03:00"
+  "CreatedAt": "2026-03-29T16:51:53.7759716+03:00",
+  "IntensityLevel": 5,
+  "SelectedTrainingDays": [
+    3,
+    4,
+    5
+  ],
+  "IsGoalSet": true,
+  "PrimaryGoal": 0
 }

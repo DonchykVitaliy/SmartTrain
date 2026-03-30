@@ -233,6 +233,9 @@ namespace SmartTrain
             // Перевіряємо, чи натиснуто на звичайний пункт меню
             if (args.SelectedItem is NavigationViewItem item)
             {
+                // Вмикаємо кнопку тільки якщо відкрита вкладка "Ціль"
+                ChangeGoalButton.Visibility = item.Tag?.ToString() == "GoalPage" ? Visibility.Visible : Visibility.Collapsed;
+
                 switch (item.Tag)
                 {
                     case "HomePage": // <--- ДОДАЛИ ЦЕ
@@ -243,8 +246,19 @@ namespace SmartTrain
                         ContentFrame.Navigate(typeof(WorkoutPage));
                         break;
 
-                        // Тут у майбутньому будуть інші сторінки (Статистика, Досягнення)
+                    case "GoalPage": 
+                        ContentFrame.Navigate(typeof(GoalPage)); break;
                 }
+            }
+        }
+
+
+        private void ChangeGoalButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Перевіряємо, чи зараз у Frame завантажена саме сторінка GoalPage
+            if (ContentFrame.Content is GoalPage goalPage)
+            {
+                goalPage.OpenGoalSetupDialog();
             }
         }
     }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartTrain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b9b12d373c29e8e5bfb7da3b3ba8873989604568")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartTrain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartTrain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
