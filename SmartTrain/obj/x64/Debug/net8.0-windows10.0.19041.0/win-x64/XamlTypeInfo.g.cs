@@ -226,129 +226,131 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
         
         private void InitTypeTables()
         {
-            _typeNameTable = new string[60];
+            _typeNameTable = new string[61];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
             _typeNameTable[3] = "Boolean";
-            _typeNameTable[4] = "SmartTrain.GoalPage";
+            _typeNameTable[4] = "SmartTrain.AchievementsPage";
             _typeNameTable[5] = "Microsoft.UI.Xaml.Controls.Page";
             _typeNameTable[6] = "Microsoft.UI.Xaml.Controls.UserControl";
-            _typeNameTable[7] = "SmartTrain.HomePage";
-            _typeNameTable[8] = "Microsoft.UI.Xaml.Media.MicaBackdrop";
-            _typeNameTable[9] = "Microsoft.UI.Xaml.Media.SystemBackdrop";
-            _typeNameTable[10] = "Microsoft.UI.Composition.SystemBackdrops.MicaKind";
-            _typeNameTable[11] = "System.Enum";
-            _typeNameTable[12] = "System.ValueType";
-            _typeNameTable[13] = "Microsoft.UI.Xaml.Controls.TeachingTip";
-            _typeNameTable[14] = "Microsoft.UI.Xaml.Controls.ContentControl";
-            _typeNameTable[15] = "String";
-            _typeNameTable[16] = "Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode";
-            _typeNameTable[17] = "Microsoft.UI.Xaml.FrameworkElement";
-            _typeNameTable[18] = "Microsoft.UI.Xaml.Controls.IconSource";
-            _typeNameTable[19] = "System.Windows.Input.ICommand";
-            _typeNameTable[20] = "Microsoft.UI.Xaml.Style";
-            _typeNameTable[21] = "Microsoft.UI.Xaml.UIElement";
-            _typeNameTable[22] = "Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode";
-            _typeNameTable[23] = "Microsoft.UI.Xaml.Thickness";
-            _typeNameTable[24] = "Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility";
-            _typeNameTable[25] = "Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings";
-            _typeNameTable[26] = "Microsoft.UI.Xaml.DependencyObject";
-            _typeNameTable[27] = "Microsoft.UI.Xaml.Controls.NavigationView";
-            _typeNameTable[28] = "System.Collections.Generic.IList`1<Object>";
-            _typeNameTable[29] = "Microsoft.UI.Xaml.Controls.AutoSuggestBox";
-            _typeNameTable[30] = "Double";
-            _typeNameTable[31] = "Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode";
-            _typeNameTable[32] = "Microsoft.UI.Xaml.DataTemplate";
-            _typeNameTable[33] = "Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible";
-            _typeNameTable[34] = "Microsoft.UI.Xaml.Controls.StyleSelector";
-            _typeNameTable[35] = "Microsoft.UI.Xaml.Controls.DataTemplateSelector";
-            _typeNameTable[36] = "Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode";
-            _typeNameTable[37] = "Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode";
-            _typeNameTable[38] = "Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus";
-            _typeNameTable[39] = "Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled";
-            _typeNameTable[40] = "Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings";
-            _typeNameTable[41] = "Microsoft.UI.Xaml.Controls.NumberBox";
-            _typeNameTable[42] = "Microsoft.UI.Xaml.Controls.Control";
-            _typeNameTable[43] = "Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode";
-            _typeNameTable[44] = "Windows.Globalization.NumberFormatting.INumberFormatter2";
-            _typeNameTable[45] = "Microsoft.UI.Xaml.Controls.Primitives.FlyoutBase";
-            _typeNameTable[46] = "Microsoft.UI.Xaml.Media.SolidColorBrush";
-            _typeNameTable[47] = "Microsoft.UI.Xaml.TextReadingOrder";
-            _typeNameTable[48] = "Microsoft.UI.Xaml.Controls.NumberBoxValidationMode";
-            _typeNameTable[49] = "Microsoft.UI.Xaml.Controls.NavigationViewItem";
-            _typeNameTable[50] = "Microsoft.UI.Xaml.Controls.NavigationViewItemBase";
-            _typeNameTable[51] = "Microsoft.UI.Xaml.Controls.IconElement";
-            _typeNameTable[52] = "Microsoft.UI.Xaml.Controls.InfoBadge";
-            _typeNameTable[53] = "SmartTrain.MainWindow";
-            _typeNameTable[54] = "Microsoft.UI.Xaml.Window";
-            _typeNameTable[55] = "SmartTrain.UserProfile";
-            _typeNameTable[56] = "SmartTrain.WorkoutPage";
-            _typeNameTable[57] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[58] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
-            _typeNameTable[59] = "Int32";
+            _typeNameTable[7] = "SmartTrain.GoalPage";
+            _typeNameTable[8] = "SmartTrain.HomePage";
+            _typeNameTable[9] = "Microsoft.UI.Xaml.Media.MicaBackdrop";
+            _typeNameTable[10] = "Microsoft.UI.Xaml.Media.SystemBackdrop";
+            _typeNameTable[11] = "Microsoft.UI.Composition.SystemBackdrops.MicaKind";
+            _typeNameTable[12] = "System.Enum";
+            _typeNameTable[13] = "System.ValueType";
+            _typeNameTable[14] = "Microsoft.UI.Xaml.Controls.TeachingTip";
+            _typeNameTable[15] = "Microsoft.UI.Xaml.Controls.ContentControl";
+            _typeNameTable[16] = "String";
+            _typeNameTable[17] = "Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode";
+            _typeNameTable[18] = "Microsoft.UI.Xaml.FrameworkElement";
+            _typeNameTable[19] = "Microsoft.UI.Xaml.Controls.IconSource";
+            _typeNameTable[20] = "System.Windows.Input.ICommand";
+            _typeNameTable[21] = "Microsoft.UI.Xaml.Style";
+            _typeNameTable[22] = "Microsoft.UI.Xaml.UIElement";
+            _typeNameTable[23] = "Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode";
+            _typeNameTable[24] = "Microsoft.UI.Xaml.Thickness";
+            _typeNameTable[25] = "Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility";
+            _typeNameTable[26] = "Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings";
+            _typeNameTable[27] = "Microsoft.UI.Xaml.DependencyObject";
+            _typeNameTable[28] = "Microsoft.UI.Xaml.Controls.NavigationView";
+            _typeNameTable[29] = "System.Collections.Generic.IList`1<Object>";
+            _typeNameTable[30] = "Microsoft.UI.Xaml.Controls.AutoSuggestBox";
+            _typeNameTable[31] = "Double";
+            _typeNameTable[32] = "Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode";
+            _typeNameTable[33] = "Microsoft.UI.Xaml.DataTemplate";
+            _typeNameTable[34] = "Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible";
+            _typeNameTable[35] = "Microsoft.UI.Xaml.Controls.StyleSelector";
+            _typeNameTable[36] = "Microsoft.UI.Xaml.Controls.DataTemplateSelector";
+            _typeNameTable[37] = "Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode";
+            _typeNameTable[38] = "Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode";
+            _typeNameTable[39] = "Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus";
+            _typeNameTable[40] = "Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled";
+            _typeNameTable[41] = "Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings";
+            _typeNameTable[42] = "Microsoft.UI.Xaml.Controls.NumberBox";
+            _typeNameTable[43] = "Microsoft.UI.Xaml.Controls.Control";
+            _typeNameTable[44] = "Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode";
+            _typeNameTable[45] = "Windows.Globalization.NumberFormatting.INumberFormatter2";
+            _typeNameTable[46] = "Microsoft.UI.Xaml.Controls.Primitives.FlyoutBase";
+            _typeNameTable[47] = "Microsoft.UI.Xaml.Media.SolidColorBrush";
+            _typeNameTable[48] = "Microsoft.UI.Xaml.TextReadingOrder";
+            _typeNameTable[49] = "Microsoft.UI.Xaml.Controls.NumberBoxValidationMode";
+            _typeNameTable[50] = "Microsoft.UI.Xaml.Controls.NavigationViewItem";
+            _typeNameTable[51] = "Microsoft.UI.Xaml.Controls.NavigationViewItemBase";
+            _typeNameTable[52] = "Microsoft.UI.Xaml.Controls.IconElement";
+            _typeNameTable[53] = "Microsoft.UI.Xaml.Controls.InfoBadge";
+            _typeNameTable[54] = "SmartTrain.MainWindow";
+            _typeNameTable[55] = "Microsoft.UI.Xaml.Window";
+            _typeNameTable[56] = "SmartTrain.UserProfile";
+            _typeNameTable[57] = "SmartTrain.WorkoutPage";
+            _typeNameTable[58] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[59] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[60] = "Int32";
 
-            _typeTable = new global::System.Type[60];
+            _typeTable = new global::System.Type[61];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
             _typeTable[3] = typeof(global::System.Boolean);
-            _typeTable[4] = typeof(global::SmartTrain.GoalPage);
+            _typeTable[4] = typeof(global::SmartTrain.AchievementsPage);
             _typeTable[5] = typeof(global::Microsoft.UI.Xaml.Controls.Page);
             _typeTable[6] = typeof(global::Microsoft.UI.Xaml.Controls.UserControl);
-            _typeTable[7] = typeof(global::SmartTrain.HomePage);
-            _typeTable[8] = typeof(global::Microsoft.UI.Xaml.Media.MicaBackdrop);
-            _typeTable[9] = typeof(global::Microsoft.UI.Xaml.Media.SystemBackdrop);
-            _typeTable[10] = typeof(global::Microsoft.UI.Composition.SystemBackdrops.MicaKind);
-            _typeTable[11] = typeof(global::System.Enum);
-            _typeTable[12] = typeof(global::System.ValueType);
-            _typeTable[13] = typeof(global::Microsoft.UI.Xaml.Controls.TeachingTip);
-            _typeTable[14] = typeof(global::Microsoft.UI.Xaml.Controls.ContentControl);
-            _typeTable[15] = typeof(global::System.String);
-            _typeTable[16] = typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode);
-            _typeTable[17] = typeof(global::Microsoft.UI.Xaml.FrameworkElement);
-            _typeTable[18] = typeof(global::Microsoft.UI.Xaml.Controls.IconSource);
-            _typeTable[19] = typeof(global::System.Windows.Input.ICommand);
-            _typeTable[20] = typeof(global::Microsoft.UI.Xaml.Style);
-            _typeTable[21] = typeof(global::Microsoft.UI.Xaml.UIElement);
-            _typeTable[22] = typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode);
-            _typeTable[23] = typeof(global::Microsoft.UI.Xaml.Thickness);
-            _typeTable[24] = typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility);
-            _typeTable[25] = typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings);
-            _typeTable[26] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
-            _typeTable[27] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationView);
-            _typeTable[28] = typeof(global::System.Collections.Generic.IList<global::System.Object>);
-            _typeTable[29] = typeof(global::Microsoft.UI.Xaml.Controls.AutoSuggestBox);
-            _typeTable[30] = typeof(global::System.Double);
-            _typeTable[31] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode);
-            _typeTable[32] = typeof(global::Microsoft.UI.Xaml.DataTemplate);
-            _typeTable[33] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible);
-            _typeTable[34] = typeof(global::Microsoft.UI.Xaml.Controls.StyleSelector);
-            _typeTable[35] = typeof(global::Microsoft.UI.Xaml.Controls.DataTemplateSelector);
-            _typeTable[36] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode);
-            _typeTable[37] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode);
-            _typeTable[38] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus);
-            _typeTable[39] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled);
-            _typeTable[40] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings);
-            _typeTable[41] = typeof(global::Microsoft.UI.Xaml.Controls.NumberBox);
-            _typeTable[42] = typeof(global::Microsoft.UI.Xaml.Controls.Control);
-            _typeTable[43] = typeof(global::Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode);
-            _typeTable[44] = typeof(global::Windows.Globalization.NumberFormatting.INumberFormatter2);
-            _typeTable[45] = typeof(global::Microsoft.UI.Xaml.Controls.Primitives.FlyoutBase);
-            _typeTable[46] = typeof(global::Microsoft.UI.Xaml.Media.SolidColorBrush);
-            _typeTable[47] = typeof(global::Microsoft.UI.Xaml.TextReadingOrder);
-            _typeTable[48] = typeof(global::Microsoft.UI.Xaml.Controls.NumberBoxValidationMode);
-            _typeTable[49] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItem);
-            _typeTable[50] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItemBase);
-            _typeTable[51] = typeof(global::Microsoft.UI.Xaml.Controls.IconElement);
-            _typeTable[52] = typeof(global::Microsoft.UI.Xaml.Controls.InfoBadge);
-            _typeTable[53] = typeof(global::SmartTrain.MainWindow);
-            _typeTable[54] = typeof(global::Microsoft.UI.Xaml.Window);
-            _typeTable[55] = typeof(global::SmartTrain.UserProfile);
-            _typeTable[56] = typeof(global::SmartTrain.WorkoutPage);
-            _typeTable[57] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[58] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
-            _typeTable[59] = typeof(global::System.Int32);
+            _typeTable[7] = typeof(global::SmartTrain.GoalPage);
+            _typeTable[8] = typeof(global::SmartTrain.HomePage);
+            _typeTable[9] = typeof(global::Microsoft.UI.Xaml.Media.MicaBackdrop);
+            _typeTable[10] = typeof(global::Microsoft.UI.Xaml.Media.SystemBackdrop);
+            _typeTable[11] = typeof(global::Microsoft.UI.Composition.SystemBackdrops.MicaKind);
+            _typeTable[12] = typeof(global::System.Enum);
+            _typeTable[13] = typeof(global::System.ValueType);
+            _typeTable[14] = typeof(global::Microsoft.UI.Xaml.Controls.TeachingTip);
+            _typeTable[15] = typeof(global::Microsoft.UI.Xaml.Controls.ContentControl);
+            _typeTable[16] = typeof(global::System.String);
+            _typeTable[17] = typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode);
+            _typeTable[18] = typeof(global::Microsoft.UI.Xaml.FrameworkElement);
+            _typeTable[19] = typeof(global::Microsoft.UI.Xaml.Controls.IconSource);
+            _typeTable[20] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[21] = typeof(global::Microsoft.UI.Xaml.Style);
+            _typeTable[22] = typeof(global::Microsoft.UI.Xaml.UIElement);
+            _typeTable[23] = typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode);
+            _typeTable[24] = typeof(global::Microsoft.UI.Xaml.Thickness);
+            _typeTable[25] = typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility);
+            _typeTable[26] = typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings);
+            _typeTable[27] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
+            _typeTable[28] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationView);
+            _typeTable[29] = typeof(global::System.Collections.Generic.IList<global::System.Object>);
+            _typeTable[30] = typeof(global::Microsoft.UI.Xaml.Controls.AutoSuggestBox);
+            _typeTable[31] = typeof(global::System.Double);
+            _typeTable[32] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode);
+            _typeTable[33] = typeof(global::Microsoft.UI.Xaml.DataTemplate);
+            _typeTable[34] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible);
+            _typeTable[35] = typeof(global::Microsoft.UI.Xaml.Controls.StyleSelector);
+            _typeTable[36] = typeof(global::Microsoft.UI.Xaml.Controls.DataTemplateSelector);
+            _typeTable[37] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode);
+            _typeTable[38] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode);
+            _typeTable[39] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus);
+            _typeTable[40] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled);
+            _typeTable[41] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings);
+            _typeTable[42] = typeof(global::Microsoft.UI.Xaml.Controls.NumberBox);
+            _typeTable[43] = typeof(global::Microsoft.UI.Xaml.Controls.Control);
+            _typeTable[44] = typeof(global::Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode);
+            _typeTable[45] = typeof(global::Windows.Globalization.NumberFormatting.INumberFormatter2);
+            _typeTable[46] = typeof(global::Microsoft.UI.Xaml.Controls.Primitives.FlyoutBase);
+            _typeTable[47] = typeof(global::Microsoft.UI.Xaml.Media.SolidColorBrush);
+            _typeTable[48] = typeof(global::Microsoft.UI.Xaml.TextReadingOrder);
+            _typeTable[49] = typeof(global::Microsoft.UI.Xaml.Controls.NumberBoxValidationMode);
+            _typeTable[50] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItem);
+            _typeTable[51] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItemBase);
+            _typeTable[52] = typeof(global::Microsoft.UI.Xaml.Controls.IconElement);
+            _typeTable[53] = typeof(global::Microsoft.UI.Xaml.Controls.InfoBadge);
+            _typeTable[54] = typeof(global::SmartTrain.MainWindow);
+            _typeTable[55] = typeof(global::Microsoft.UI.Xaml.Window);
+            _typeTable[56] = typeof(global::SmartTrain.UserProfile);
+            _typeTable[57] = typeof(global::SmartTrain.WorkoutPage);
+            _typeTable[58] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[59] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[60] = typeof(global::System.Int32);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -384,55 +386,57 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
         }
 
         private object Activate_0_XamlControlsResources() { return new global::Microsoft.UI.Xaml.Controls.XamlControlsResources(); }
-        private object Activate_4_GoalPage() { return new global::SmartTrain.GoalPage(); }
-        private object Activate_7_HomePage() { return new global::SmartTrain.HomePage(); }
-        private object Activate_8_MicaBackdrop() { return new global::Microsoft.UI.Xaml.Media.MicaBackdrop(); }
-        private object Activate_13_TeachingTip() { return new global::Microsoft.UI.Xaml.Controls.TeachingTip(); }
-        private object Activate_25_TeachingTipTemplateSettings() { return new global::Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings(); }
-        private object Activate_27_NavigationView() { return new global::Microsoft.UI.Xaml.Controls.NavigationView(); }
-        private object Activate_40_NavigationViewTemplateSettings() { return new global::Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings(); }
-        private object Activate_41_NumberBox() { return new global::Microsoft.UI.Xaml.Controls.NumberBox(); }
-        private object Activate_49_NavigationViewItem() { return new global::Microsoft.UI.Xaml.Controls.NavigationViewItem(); }
-        private object Activate_52_InfoBadge() { return new global::Microsoft.UI.Xaml.Controls.InfoBadge(); }
-        private object Activate_53_MainWindow() { return new global::SmartTrain.MainWindow(); }
-        private object Activate_55_UserProfile() { return new global::SmartTrain.UserProfile(); }
-        private object Activate_56_WorkoutPage() { return new global::SmartTrain.WorkoutPage(); }
-        private object Activate_57_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_4_AchievementsPage() { return new global::SmartTrain.AchievementsPage(); }
+        private object Activate_7_GoalPage() { return new global::SmartTrain.GoalPage(); }
+        private object Activate_8_HomePage() { return new global::SmartTrain.HomePage(); }
+        private object Activate_9_MicaBackdrop() { return new global::Microsoft.UI.Xaml.Media.MicaBackdrop(); }
+        private object Activate_14_TeachingTip() { return new global::Microsoft.UI.Xaml.Controls.TeachingTip(); }
+        private object Activate_26_TeachingTipTemplateSettings() { return new global::Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings(); }
+        private object Activate_28_NavigationView() { return new global::Microsoft.UI.Xaml.Controls.NavigationView(); }
+        private object Activate_41_NavigationViewTemplateSettings() { return new global::Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings(); }
+        private object Activate_42_NumberBox() { return new global::Microsoft.UI.Xaml.Controls.NumberBox(); }
+        private object Activate_50_NavigationViewItem() { return new global::Microsoft.UI.Xaml.Controls.NavigationViewItem(); }
+        private object Activate_53_InfoBadge() { return new global::Microsoft.UI.Xaml.Controls.InfoBadge(); }
+        private object Activate_54_MainWindow() { return new global::SmartTrain.MainWindow(); }
+        private object Activate_56_UserProfile() { return new global::SmartTrain.UserProfile(); }
+        private object Activate_57_WorkoutPage() { return new global::SmartTrain.WorkoutPage(); }
+        private object Activate_58_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
-        private void StaticInitializer_4_GoalPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SmartTrain.GoalPage).TypeHandle);
-        private void StaticInitializer_7_HomePage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SmartTrain.HomePage).TypeHandle);
-        private void StaticInitializer_8_MicaBackdrop() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Media.MicaBackdrop).TypeHandle);
-        private void StaticInitializer_10_MicaKind() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Composition.SystemBackdrops.MicaKind).TypeHandle);
-        private void StaticInitializer_11_Enum() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Enum).TypeHandle);
-        private void StaticInitializer_12_ValueType() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.ValueType).TypeHandle);
-        private void StaticInitializer_13_TeachingTip() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TeachingTip).TypeHandle);
-        private void StaticInitializer_16_TeachingTipPlacementMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode).TypeHandle);
-        private void StaticInitializer_19_ICommand() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Windows.Input.ICommand).TypeHandle);
-        private void StaticInitializer_22_TeachingTipHeroContentPlacementMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode).TypeHandle);
-        private void StaticInitializer_23_Thickness() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Thickness).TypeHandle);
-        private void StaticInitializer_24_TeachingTipTailVisibility() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility).TypeHandle);
-        private void StaticInitializer_25_TeachingTipTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings).TypeHandle);
-        private void StaticInitializer_27_NavigationView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationView).TypeHandle);
-        private void StaticInitializer_28_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::System.Object>).TypeHandle);
-        private void StaticInitializer_31_NavigationViewDisplayMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode).TypeHandle);
-        private void StaticInitializer_33_NavigationViewBackButtonVisible() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible).TypeHandle);
-        private void StaticInitializer_36_NavigationViewOverflowLabelMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode).TypeHandle);
-        private void StaticInitializer_37_NavigationViewPaneDisplayMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode).TypeHandle);
-        private void StaticInitializer_38_NavigationViewSelectionFollowsFocus() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus).TypeHandle);
-        private void StaticInitializer_39_NavigationViewShoulderNavigationEnabled() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled).TypeHandle);
-        private void StaticInitializer_40_NavigationViewTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings).TypeHandle);
-        private void StaticInitializer_41_NumberBox() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NumberBox).TypeHandle);
-        private void StaticInitializer_43_NumberBoxSpinButtonPlacementMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode).TypeHandle);
-        private void StaticInitializer_44_INumberFormatter2() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Windows.Globalization.NumberFormatting.INumberFormatter2).TypeHandle);
-        private void StaticInitializer_48_NumberBoxValidationMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NumberBoxValidationMode).TypeHandle);
-        private void StaticInitializer_49_NavigationViewItem() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItem).TypeHandle);
-        private void StaticInitializer_50_NavigationViewItemBase() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItemBase).TypeHandle);
-        private void StaticInitializer_52_InfoBadge() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.InfoBadge).TypeHandle);
-        private void StaticInitializer_53_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SmartTrain.MainWindow).TypeHandle);
-        private void StaticInitializer_55_UserProfile() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SmartTrain.UserProfile).TypeHandle);
-        private void StaticInitializer_56_WorkoutPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SmartTrain.WorkoutPage).TypeHandle);
-        private void StaticInitializer_57_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
-        private void StaticInitializer_58_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
+        private void StaticInitializer_4_AchievementsPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SmartTrain.AchievementsPage).TypeHandle);
+        private void StaticInitializer_7_GoalPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SmartTrain.GoalPage).TypeHandle);
+        private void StaticInitializer_8_HomePage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SmartTrain.HomePage).TypeHandle);
+        private void StaticInitializer_9_MicaBackdrop() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Media.MicaBackdrop).TypeHandle);
+        private void StaticInitializer_11_MicaKind() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Composition.SystemBackdrops.MicaKind).TypeHandle);
+        private void StaticInitializer_12_Enum() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Enum).TypeHandle);
+        private void StaticInitializer_13_ValueType() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.ValueType).TypeHandle);
+        private void StaticInitializer_14_TeachingTip() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TeachingTip).TypeHandle);
+        private void StaticInitializer_17_TeachingTipPlacementMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode).TypeHandle);
+        private void StaticInitializer_20_ICommand() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Windows.Input.ICommand).TypeHandle);
+        private void StaticInitializer_23_TeachingTipHeroContentPlacementMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode).TypeHandle);
+        private void StaticInitializer_24_Thickness() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Thickness).TypeHandle);
+        private void StaticInitializer_25_TeachingTipTailVisibility() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility).TypeHandle);
+        private void StaticInitializer_26_TeachingTipTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings).TypeHandle);
+        private void StaticInitializer_28_NavigationView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationView).TypeHandle);
+        private void StaticInitializer_29_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::System.Object>).TypeHandle);
+        private void StaticInitializer_32_NavigationViewDisplayMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode).TypeHandle);
+        private void StaticInitializer_34_NavigationViewBackButtonVisible() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible).TypeHandle);
+        private void StaticInitializer_37_NavigationViewOverflowLabelMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode).TypeHandle);
+        private void StaticInitializer_38_NavigationViewPaneDisplayMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode).TypeHandle);
+        private void StaticInitializer_39_NavigationViewSelectionFollowsFocus() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus).TypeHandle);
+        private void StaticInitializer_40_NavigationViewShoulderNavigationEnabled() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled).TypeHandle);
+        private void StaticInitializer_41_NavigationViewTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings).TypeHandle);
+        private void StaticInitializer_42_NumberBox() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NumberBox).TypeHandle);
+        private void StaticInitializer_44_NumberBoxSpinButtonPlacementMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode).TypeHandle);
+        private void StaticInitializer_45_INumberFormatter2() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Windows.Globalization.NumberFormatting.INumberFormatter2).TypeHandle);
+        private void StaticInitializer_49_NumberBoxValidationMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NumberBoxValidationMode).TypeHandle);
+        private void StaticInitializer_50_NavigationViewItem() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItem).TypeHandle);
+        private void StaticInitializer_51_NavigationViewItemBase() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItemBase).TypeHandle);
+        private void StaticInitializer_53_InfoBadge() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.InfoBadge).TypeHandle);
+        private void StaticInitializer_54_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SmartTrain.MainWindow).TypeHandle);
+        private void StaticInitializer_56_UserProfile() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SmartTrain.UserProfile).TypeHandle);
+        private void StaticInitializer_57_WorkoutPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SmartTrain.WorkoutPage).TypeHandle);
+        private void StaticInitializer_58_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
+        private void StaticInitializer_59_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -440,13 +444,13 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
             var newItem = (global::System.Object)item;
             collection.Add(newKey, newItem);
         }
-        private void VectorAdd_28_IList(object instance, object item)
+        private void VectorAdd_29_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::System.Object>)instance;
             var newItem = (global::System.Object)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_58_IList(object instance, object item)
+        private void VectorAdd_59_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -484,10 +488,10 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 4:   //  SmartTrain.GoalPage
+            case 4:   //  SmartTrain.AchievementsPage
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_4_GoalPage;
-                userType.StaticInitializer = StaticInitializer_4_GoalPage;
+                userType.Activator = Activate_4_AchievementsPage;
+                userType.StaticInitializer = StaticInitializer_4_AchievementsPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -500,50 +504,58 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 7:   //  SmartTrain.HomePage
+            case 7:   //  SmartTrain.GoalPage
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_7_HomePage;
-                userType.StaticInitializer = StaticInitializer_7_HomePage;
+                userType.Activator = Activate_7_GoalPage;
+                userType.StaticInitializer = StaticInitializer_7_GoalPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 8:   //  Microsoft.UI.Xaml.Media.MicaBackdrop
+            case 8:   //  SmartTrain.HomePage
+                userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_8_HomePage;
+                userType.StaticInitializer = StaticInitializer_8_HomePage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 9:   //  Microsoft.UI.Xaml.Media.MicaBackdrop
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Media.SystemBackdrop"));
-                userType.Activator = Activate_8_MicaBackdrop;
-                userType.StaticInitializer = StaticInitializer_8_MicaBackdrop;
+                userType.Activator = Activate_9_MicaBackdrop;
+                userType.StaticInitializer = StaticInitializer_9_MicaBackdrop;
                 userType.AddMemberName("Kind");
                 xamlType = userType;
                 break;
 
-            case 9:   //  Microsoft.UI.Xaml.Media.SystemBackdrop
+            case 10:   //  Microsoft.UI.Xaml.Media.SystemBackdrop
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 10:   //  Microsoft.UI.Composition.SystemBackdrops.MicaKind
+            case 11:   //  Microsoft.UI.Composition.SystemBackdrops.MicaKind
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_10_MicaKind;
+                userType.StaticInitializer = StaticInitializer_11_MicaKind;
                 userType.AddEnumValue("Base", global::Microsoft.UI.Composition.SystemBackdrops.MicaKind.Base);
                 userType.AddEnumValue("BaseAlt", global::Microsoft.UI.Composition.SystemBackdrops.MicaKind.BaseAlt);
                 xamlType = userType;
                 break;
 
-            case 11:   //  System.Enum
+            case 12:   //  System.Enum
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.StaticInitializer = StaticInitializer_11_Enum;
+                userType.StaticInitializer = StaticInitializer_12_Enum;
                 xamlType = userType;
                 break;
 
-            case 12:   //  System.ValueType
+            case 13:   //  System.ValueType
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_12_ValueType;
+                userType.StaticInitializer = StaticInitializer_13_ValueType;
                 xamlType = userType;
                 break;
 
-            case 13:   //  Microsoft.UI.Xaml.Controls.TeachingTip
+            case 14:   //  Microsoft.UI.Xaml.Controls.TeachingTip
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ContentControl"));
-                userType.Activator = Activate_13_TeachingTip;
-                userType.StaticInitializer = StaticInitializer_13_TeachingTip;
+                userType.Activator = Activate_14_TeachingTip;
+                userType.StaticInitializer = StaticInitializer_14_TeachingTip;
                 userType.AddMemberName("Title");
                 userType.AddMemberName("Subtitle");
                 userType.AddMemberName("PreferredPlacement");
@@ -568,17 +580,17 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 14:   //  Microsoft.UI.Xaml.Controls.ContentControl
+            case 15:   //  Microsoft.UI.Xaml.Controls.ContentControl
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 15:   //  String
+            case 16:   //  String
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 16:   //  Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode
+            case 17:   //  Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_16_TeachingTipPlacementMode;
+                userType.StaticInitializer = StaticInitializer_17_TeachingTipPlacementMode;
                 userType.AddEnumValue("Auto", global::Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode.Auto);
                 userType.AddEnumValue("Top", global::Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode.Top);
                 userType.AddEnumValue("Bottom", global::Microsoft.UI.Xaml.Controls.TeachingTipPlacementMode.Bottom);
@@ -596,69 +608,69 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 17:   //  Microsoft.UI.Xaml.FrameworkElement
+            case 18:   //  Microsoft.UI.Xaml.FrameworkElement
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 18:   //  Microsoft.UI.Xaml.Controls.IconSource
+            case 19:   //  Microsoft.UI.Xaml.Controls.IconSource
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 19:   //  System.Windows.Input.ICommand
+            case 20:   //  System.Windows.Input.ICommand
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_19_ICommand;
+                userType.StaticInitializer = StaticInitializer_20_ICommand;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 20:   //  Microsoft.UI.Xaml.Style
+            case 21:   //  Microsoft.UI.Xaml.Style
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 21:   //  Microsoft.UI.Xaml.UIElement
+            case 22:   //  Microsoft.UI.Xaml.UIElement
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 22:   //  Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode
+            case 23:   //  Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_22_TeachingTipHeroContentPlacementMode;
+                userType.StaticInitializer = StaticInitializer_23_TeachingTipHeroContentPlacementMode;
                 userType.AddEnumValue("Auto", global::Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode.Auto);
                 userType.AddEnumValue("Top", global::Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode.Top);
                 userType.AddEnumValue("Bottom", global::Microsoft.UI.Xaml.Controls.TeachingTipHeroContentPlacementMode.Bottom);
                 xamlType = userType;
                 break;
 
-            case 23:   //  Microsoft.UI.Xaml.Thickness
+            case 24:   //  Microsoft.UI.Xaml.Thickness
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.StaticInitializer = StaticInitializer_23_Thickness;
+                userType.StaticInitializer = StaticInitializer_24_Thickness;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 24:   //  Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility
+            case 25:   //  Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_24_TeachingTipTailVisibility;
+                userType.StaticInitializer = StaticInitializer_25_TeachingTipTailVisibility;
                 userType.AddEnumValue("Auto", global::Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility.Auto);
                 userType.AddEnumValue("Visible", global::Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility.Visible);
                 userType.AddEnumValue("Collapsed", global::Microsoft.UI.Xaml.Controls.TeachingTipTailVisibility.Collapsed);
                 xamlType = userType;
                 break;
 
-            case 25:   //  Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings
+            case 26:   //  Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.StaticInitializer = StaticInitializer_25_TeachingTipTemplateSettings;
+                userType.StaticInitializer = StaticInitializer_26_TeachingTipTemplateSettings;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 26:   //  Microsoft.UI.Xaml.DependencyObject
+            case 27:   //  Microsoft.UI.Xaml.DependencyObject
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 27:   //  Microsoft.UI.Xaml.Controls.NavigationView
+            case 28:   //  Microsoft.UI.Xaml.Controls.NavigationView
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ContentControl"));
-                userType.Activator = Activate_27_NavigationView;
-                userType.StaticInitializer = StaticInitializer_27_NavigationView;
+                userType.Activator = Activate_28_NavigationView;
+                userType.StaticInitializer = StaticInitializer_28_NavigationView;
                 userType.AddMemberName("PaneTitle");
                 userType.AddMemberName("IsSettingsVisible");
                 userType.AddMemberName("MenuItems");
@@ -699,63 +711,63 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 28:   //  System.Collections.Generic.IList`1<Object>
+            case 29:   //  System.Collections.Generic.IList`1<Object>
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_28_IList;
-                userType.CollectionAdd = VectorAdd_28_IList;
+                userType.StaticInitializer = StaticInitializer_29_IList;
+                userType.CollectionAdd = VectorAdd_29_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 29:   //  Microsoft.UI.Xaml.Controls.AutoSuggestBox
+            case 30:   //  Microsoft.UI.Xaml.Controls.AutoSuggestBox
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 30:   //  Double
+            case 31:   //  Double
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 31:   //  Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode
+            case 32:   //  Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_31_NavigationViewDisplayMode;
+                userType.StaticInitializer = StaticInitializer_32_NavigationViewDisplayMode;
                 userType.AddEnumValue("Minimal", global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Minimal);
                 userType.AddEnumValue("Compact", global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Compact);
                 userType.AddEnumValue("Expanded", global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Expanded);
                 xamlType = userType;
                 break;
 
-            case 32:   //  Microsoft.UI.Xaml.DataTemplate
+            case 33:   //  Microsoft.UI.Xaml.DataTemplate
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 33:   //  Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible
+            case 34:   //  Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_33_NavigationViewBackButtonVisible;
+                userType.StaticInitializer = StaticInitializer_34_NavigationViewBackButtonVisible;
                 userType.AddEnumValue("Collapsed", global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible.Collapsed);
                 userType.AddEnumValue("Visible", global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible.Visible);
                 userType.AddEnumValue("Auto", global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible.Auto);
                 xamlType = userType;
                 break;
 
-            case 34:   //  Microsoft.UI.Xaml.Controls.StyleSelector
+            case 35:   //  Microsoft.UI.Xaml.Controls.StyleSelector
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 35:   //  Microsoft.UI.Xaml.Controls.DataTemplateSelector
+            case 36:   //  Microsoft.UI.Xaml.Controls.DataTemplateSelector
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 36:   //  Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode
+            case 37:   //  Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_36_NavigationViewOverflowLabelMode;
+                userType.StaticInitializer = StaticInitializer_37_NavigationViewOverflowLabelMode;
                 userType.AddEnumValue("MoreLabel", global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode.MoreLabel);
                 userType.AddEnumValue("NoLabel", global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode.NoLabel);
                 xamlType = userType;
                 break;
 
-            case 37:   //  Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode
+            case 38:   //  Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_37_NavigationViewPaneDisplayMode;
+                userType.StaticInitializer = StaticInitializer_38_NavigationViewPaneDisplayMode;
                 userType.AddEnumValue("Auto", global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode.Auto);
                 userType.AddEnumValue("Left", global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode.Left);
                 userType.AddEnumValue("Top", global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode.Top);
@@ -764,34 +776,34 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 38:   //  Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus
+            case 39:   //  Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_38_NavigationViewSelectionFollowsFocus;
+                userType.StaticInitializer = StaticInitializer_39_NavigationViewSelectionFollowsFocus;
                 userType.AddEnumValue("Disabled", global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus.Disabled);
                 userType.AddEnumValue("Enabled", global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus.Enabled);
                 xamlType = userType;
                 break;
 
-            case 39:   //  Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled
+            case 40:   //  Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_39_NavigationViewShoulderNavigationEnabled;
+                userType.StaticInitializer = StaticInitializer_40_NavigationViewShoulderNavigationEnabled;
                 userType.AddEnumValue("WhenSelectionFollowsFocus", global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled.WhenSelectionFollowsFocus);
                 userType.AddEnumValue("Always", global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled.Always);
                 userType.AddEnumValue("Never", global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled.Never);
                 xamlType = userType;
                 break;
 
-            case 40:   //  Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings
+            case 41:   //  Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.StaticInitializer = StaticInitializer_40_NavigationViewTemplateSettings;
+                userType.StaticInitializer = StaticInitializer_41_NavigationViewTemplateSettings;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 41:   //  Microsoft.UI.Xaml.Controls.NumberBox
+            case 42:   //  Microsoft.UI.Xaml.Controls.NumberBox
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_41_NumberBox;
-                userType.StaticInitializer = StaticInitializer_41_NumberBox;
+                userType.Activator = Activate_42_NumberBox;
+                userType.StaticInitializer = StaticInitializer_42_NumberBox;
                 userType.AddMemberName("Header");
                 userType.AddMemberName("Value");
                 userType.AddMemberName("SpinButtonPlacementMode");
@@ -814,50 +826,50 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 42:   //  Microsoft.UI.Xaml.Controls.Control
+            case 43:   //  Microsoft.UI.Xaml.Controls.Control
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 43:   //  Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode
+            case 44:   //  Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_43_NumberBoxSpinButtonPlacementMode;
+                userType.StaticInitializer = StaticInitializer_44_NumberBoxSpinButtonPlacementMode;
                 userType.AddEnumValue("Hidden", global::Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode.Hidden);
                 userType.AddEnumValue("Compact", global::Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode.Compact);
                 userType.AddEnumValue("Inline", global::Microsoft.UI.Xaml.Controls.NumberBoxSpinButtonPlacementMode.Inline);
                 xamlType = userType;
                 break;
 
-            case 44:   //  Windows.Globalization.NumberFormatting.INumberFormatter2
+            case 45:   //  Windows.Globalization.NumberFormatting.INumberFormatter2
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_44_INumberFormatter2;
+                userType.StaticInitializer = StaticInitializer_45_INumberFormatter2;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 45:   //  Microsoft.UI.Xaml.Controls.Primitives.FlyoutBase
+            case 46:   //  Microsoft.UI.Xaml.Controls.Primitives.FlyoutBase
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 46:   //  Microsoft.UI.Xaml.Media.SolidColorBrush
+            case 47:   //  Microsoft.UI.Xaml.Media.SolidColorBrush
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 47:   //  Microsoft.UI.Xaml.TextReadingOrder
+            case 48:   //  Microsoft.UI.Xaml.TextReadingOrder
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 48:   //  Microsoft.UI.Xaml.Controls.NumberBoxValidationMode
+            case 49:   //  Microsoft.UI.Xaml.Controls.NumberBoxValidationMode
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_48_NumberBoxValidationMode;
+                userType.StaticInitializer = StaticInitializer_49_NumberBoxValidationMode;
                 userType.AddEnumValue("InvalidInputOverwritten", global::Microsoft.UI.Xaml.Controls.NumberBoxValidationMode.InvalidInputOverwritten);
                 userType.AddEnumValue("Disabled", global::Microsoft.UI.Xaml.Controls.NumberBoxValidationMode.Disabled);
                 xamlType = userType;
                 break;
 
-            case 49:   //  Microsoft.UI.Xaml.Controls.NavigationViewItem
+            case 50:   //  Microsoft.UI.Xaml.Controls.NavigationViewItem
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NavigationViewItemBase"));
-                userType.Activator = Activate_49_NavigationViewItem;
-                userType.StaticInitializer = StaticInitializer_49_NavigationViewItem;
+                userType.Activator = Activate_50_NavigationViewItem;
+                userType.StaticInitializer = StaticInitializer_50_NavigationViewItem;
                 userType.AddMemberName("Icon");
                 userType.AddMemberName("CompactPaneLength");
                 userType.AddMemberName("HasUnrealizedChildren");
@@ -870,57 +882,57 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 50:   //  Microsoft.UI.Xaml.Controls.NavigationViewItemBase
+            case 51:   //  Microsoft.UI.Xaml.Controls.NavigationViewItemBase
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ContentControl"));
-                userType.StaticInitializer = StaticInitializer_50_NavigationViewItemBase;
+                userType.StaticInitializer = StaticInitializer_51_NavigationViewItemBase;
                 userType.AddMemberName("IsSelected");
                 xamlType = userType;
                 break;
 
-            case 51:   //  Microsoft.UI.Xaml.Controls.IconElement
+            case 52:   //  Microsoft.UI.Xaml.Controls.IconElement
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 52:   //  Microsoft.UI.Xaml.Controls.InfoBadge
+            case 53:   //  Microsoft.UI.Xaml.Controls.InfoBadge
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Control"));
-                userType.StaticInitializer = StaticInitializer_52_InfoBadge;
+                userType.StaticInitializer = StaticInitializer_53_InfoBadge;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 53:   //  SmartTrain.MainWindow
+            case 54:   //  SmartTrain.MainWindow
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
-                userType.Activator = Activate_53_MainWindow;
-                userType.StaticInitializer = StaticInitializer_53_MainWindow;
+                userType.Activator = Activate_54_MainWindow;
+                userType.StaticInitializer = StaticInitializer_54_MainWindow;
                 userType.AddMemberName("CurrentUser");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 54:   //  Microsoft.UI.Xaml.Window
+            case 55:   //  Microsoft.UI.Xaml.Window
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 55:   //  SmartTrain.UserProfile
+            case 56:   //  SmartTrain.UserProfile
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_55_UserProfile;
+                userType.StaticInitializer = StaticInitializer_56_UserProfile;
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 56:   //  SmartTrain.WorkoutPage
+            case 57:   //  SmartTrain.WorkoutPage
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_56_WorkoutPage;
-                userType.StaticInitializer = StaticInitializer_56_WorkoutPage;
+                userType.Activator = Activate_57_WorkoutPage;
+                userType.StaticInitializer = StaticInitializer_57_WorkoutPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 57:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+            case 58:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_57_TreeViewNode;
-                userType.StaticInitializer = StaticInitializer_57_TreeViewNode;
+                userType.Activator = Activate_58_TreeViewNode;
+                userType.StaticInitializer = StaticInitializer_58_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -932,15 +944,15 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 58:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+            case 59:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_58_IList;
-                userType.CollectionAdd = VectorAdd_58_IList;
+                userType.StaticInitializer = StaticInitializer_59_IList;
+                userType.CollectionAdd = VectorAdd_59_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 59:   //  Int32
+            case 60:   //  Int32
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }

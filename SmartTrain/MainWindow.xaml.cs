@@ -14,6 +14,8 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.Core;
+using Windows.Media.Playback;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -25,7 +27,16 @@ namespace SmartTrain
     /// </summary>
     public sealed partial class MainWindow : Window
     {
+        //таймер
+        private DispatcherTimer _achievementTimer;
+        // НОВІ ЗМІННІ ДЛЯ ЧЕРГИ ДОСЯГНЕНЬ
+        private Queue<Achievement> _achievementQueue = new Queue<Achievement>();
+        private bool _isAchievementDialogOpen = false;
+        // Створюємо "невидимий" плеєр для звуків
+        private MediaPlayer _mediaPlayer = new MediaPlayer();
+
         private string profilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "user_profile.json");
+        private string calendarPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "weekly_calendar.json");
         // Для об'єкта користувача
         public UserProfile CurrentUser { get; set; } = default!;
 
@@ -33,6 +44,14 @@ namespace SmartTrain
         {
             this.InitializeComponent();
             CheckUserProfile();
+
+            // Підписуємося на подію розблокування досягнення
+            AchievementManager.OnAchievementUnlocked += ShowAchievementPopup;
+            // НАЛАШТУВАННЯ ТАЙМЕРА
+            _achievementTimer = new DispatcherTimer();
+            _achievementTimer.Interval = TimeSpan.FromSeconds(3); // перевірка кожні 3 секунди
+            _achievementTimer.Tick += AchievementTimer_Tick;
+            _achievementTimer.Start();
         }
 
         private void CheckUserProfile()
@@ -248,6 +267,8 @@ namespace SmartTrain
 
                     case "GoalPage": 
                         ContentFrame.Navigate(typeof(GoalPage)); break;
+                    case "AchievementsPage":
+                        ContentFrame.Navigate(typeof(AchievementsPage)); break;
                 }
             }
         }
@@ -259,6 +280,106 @@ namespace SmartTrain
             if (ContentFrame.Content is GoalPage goalPage)
             {
                 goalPage.OpenGoalSetupDialog();
+            }
+        }
+
+
+
+
+        private void AchievementTimer_Tick(object sender, object e)
+        {
+            // 1. Завантажуємо свіжі дані профілю та плану з файлів
+            if (File.Exists(profilePath))
+            {
+                try
+                {
+                    string userJson = File.ReadAllText(profilePath);
+                    var user = JsonSerializer.Deserialize<UserProfile>(userJson);
+
+                    WeeklyPlan plan = null;
+                    if (File.Exists(calendarPath))
+                    {
+                        string planJson = File.ReadAllText(calendarPath);
+                        plan = JsonSerializer.Deserialize<WeeklyPlan>(planJson);
+                    }
+
+                    // 2. Викликаємо перевірку
+                    if (user != null)
+                    {
+                        AchievementManager.CheckAchievements(user, plan);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Помилка таймера досягнень: {ex.Message}");
+                }
+            }
+        }
+
+
+
+        // Цей метод викликається автоматично, коли алгоритм знаходить нове досягнення
+        private void ShowAchievementPopup(Achievement ach)
+        {
+            this.DispatcherQueue.TryEnqueue(() =>
+            {
+                _achievementQueue.Enqueue(ach); // Ставимо в чергу
+                ProcessAchievementQueue();      // Запускаємо конвеєр
+            });
+        }
+
+        // Цей метод бере досягнення з черги по одному
+        private async void ProcessAchievementQueue()
+        {
+            // Якщо вікно ВЖЕ відкрите, або черга порожня - нічого не робимо
+            if (_isAchievementDialogOpen || _achievementQueue.Count == 0)
+                return;
+
+            _isAchievementDialogOpen = true; // Блокуємо екран для наступних вікон
+
+            // Дістаємо ПЕРШЕ досягнення з черги
+            var ach = _achievementQueue.Dequeue();
+
+            if (this.Content is FrameworkElement root && root.XamlRoot != null)
+            {
+                AchievementPopupDialog.XamlRoot = root.XamlRoot;
+            }
+
+            AchievementSubtitleText.Text = ach.Title;
+            AchievementDescText.Text = ach.Description;
+
+            PlayAchievementSound();
+
+            // МАГІЯ ТУТ: Код "чекає", поки користувач не натисне кнопку "Отримати"
+            await AchievementPopupDialog.ShowAsync();
+
+            // Коли користувач закрив вікно:
+            _isAchievementDialogOpen = false; // Знімаємо блок
+            ProcessAchievementQueue(); // Викликаємо себе ж, щоб перевірити, чи є ще щось у черзі
+        }
+
+        // Обробка кнопки "Отримати"
+        private void AchievementPopupDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+        {
+            // У ContentDialog при натисканні Primary/Secondary кнопки вікно закривається автоматично.
+            // TODO: Якщо ми хочемо тут додати якусь додаткову анімацію закриття, ми можемо це зробити.
+            // Diagnostics.Debug.WriteLine("Діалог досягнення закривається по кнопці 'Отримати'.");
+        }
+
+        private void PlayAchievementSound()
+        {
+            try
+            {
+                // Вказуємо шлях до нашого файлу в папці Assets
+                var uri = new Uri("ms-appx:///Assets/achievement.mp3");
+
+                // Завантажуємо файл у плеєр та одразу запускаємо
+                _mediaPlayer.Source = MediaSource.CreateFromUri(uri);
+                _mediaPlayer.Play();
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Помилка відтворення звуку: {ex.Message}");
             }
         }
     }

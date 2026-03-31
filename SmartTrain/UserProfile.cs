@@ -14,6 +14,8 @@ namespace SmartTrain
         public int RecordStreak { get; set; } = 0;  // Рекорд серії
 
 
+        public List<string> UnlockedAchievements { get; set; } = new List<string>();
+
         // Дата створення профілю
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 

@@ -54,16 +54,7 @@ namespace SmartTrain
 
                 if (!currentUser.IsGoalSet)
                 {
-                    // Встановлюємо ліміт днів залежно від досвіду
-                    if (currentUser.FitnessLevel == "Початківець") requiredDays = 3;
-                    else if (currentUser.FitnessLevel == "Середній") requiredDays = 4;
-                    else requiredDays = 5;
-
-                    DaysRequirementText.Text = $"Ваш рівень ({currentUser.FitnessLevel}) передбачає {requiredDays} дні(в) тренувань:";
-
-                    // Тепер XamlRoot гарантовано існує!
-                    SetupGoalDialog.XamlRoot = this.Content.XamlRoot;
-                    await SetupGoalDialog.ShowAsync();
+                    OpenGoalSetupDialog(); // Викликаємо наш новий розумний метод!
                 }
                 else
                 {
@@ -72,10 +63,8 @@ namespace SmartTrain
             }
             else
             {
-                // Якщо профілю немає - повертаємо на головну
                 Frame.Navigate(typeof(HomePage));
             }
-
         }
 
         // Обробка натискання на кнопки днів (Пн, Вт...)
@@ -90,7 +79,7 @@ namespace SmartTrain
                 {
                     // Якщо ліміт вичерпано, не даємо натиснути
                     toggle.IsChecked = false;
-                    DaysWarningText.Text = $"Ви вже обрали максимум ({requiredDays} дні) для вашого рівня.";
+                    DaysWarningText.Text = $"Ви вже обрали максимум для вашого рівня.";
                 }
                 else
                 {
@@ -270,6 +259,36 @@ namespace SmartTrain
         // Цей метод можна викликати з MainWindow, щоб показати вікно налаштувань
         public async void OpenGoalSetupDialog()
         {
+            // 1. РОЗУМНА ПЕРЕВІРКА РІВНЯ (захист від друкарських помилок у JSON)
+            string level = currentUser.FitnessLevel?.ToLower() ?? "";
+
+            if (level.Contains("серед") || level.Contains("intermediate"))
+                requiredDays = 4;
+            else if (level.Contains("проф") || level.Contains("pro") || level.Contains("просунутий"))
+                requiredDays = 5;
+            else
+                requiredDays = 3; // Для Початківців
+
+            DaysRequirementText.Text = $"Ваш рівень передбачає {requiredDays} дні(в) тренувань:";
+
+            // 2. Скидаємо старий вибір днів (щоб не було багів з лічильником)
+            selectedDaysCount = 0;
+            DaysWarningText.Text = "";
+            SetupGoalDialog.IsPrimaryButtonEnabled = false;
+
+            // Знімаємо галочки з усіх кнопок тижня
+            foreach (var element in DaysTogglePanel.Children)
+            {
+                if (element is ToggleButton tb)
+                {
+                    tb.IsChecked = false;
+                }
+            }
+
+            // Відновлюємо повзунок навантаження
+            IntensitySlider.Value = currentUser.IntensityLevel > 0 ? currentUser.IntensityLevel : 3;
+
+            // 3. Відкриваємо вікно
             SetupGoalDialog.XamlRoot = this.Content.XamlRoot;
             await SetupGoalDialog.ShowAsync();
         }
@@ -297,6 +316,7 @@ namespace SmartTrain
         }
 
         // Перевіряємо, чи всі вправи мають статус (відмічені). Якщо так - показуємо кнопку "Завершити"
+        // Перевіряємо, чи всі вправи мають статус (відмічені).
         private void CheckIfDayCanBeCompleted()
         {
             var selectedDay = WeekCalendar.SelectedItem as CalendarDay;
@@ -309,7 +329,13 @@ namespace SmartTrain
                 bool allMarked = workout.Exercises.All(e => e.IsCompleted != null);
                 CompleteDayBtn.Visibility = allMarked ? Visibility.Visible : Visibility.Collapsed;
             }
+            else
+            {
+                // Ховаємо кнопку, якщо день вже завершено
+                CompleteDayBtn.Visibility = Visibility.Collapsed;
+            }
         }
+
 
         // Кнопка "Завершити день"
         private void CompleteDayBtn_Click(object sender, RoutedEventArgs e)
@@ -340,11 +366,15 @@ namespace SmartTrain
             }
         }
 
+
         private void CheckIfWeekIsCompleted()
         {
-            // Якщо всі тренувальні дні у плані мають IsDayCompleted == true
-            bool isWeekDone = currentWeeklyPlan.Workouts.All(w => w.IsDayCompleted);
-            NextWeekBtn.Visibility = isWeekDone ? Visibility.Visible : Visibility.Collapsed;
+            // Перевіряємо, що план взагалі існує, перш ніж перевіряти його завершеність
+            if (currentWeeklyPlan.Workouts.Count > 0)
+            {
+                bool isWeekDone = currentWeeklyPlan.Workouts.All(w => w.IsDayCompleted);
+                NextWeekBtn.Visibility = isWeekDone ? Visibility.Visible : Visibility.Collapsed;
+            }
         }
 
         // Логіка збереження в окрему папку
