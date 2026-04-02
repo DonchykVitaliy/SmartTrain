@@ -1,56 +1,68 @@
-using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text.Json;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
-
-namespace SmartTrain;
-
-/// <summary>
-/// An empty page that can be used on its own or navigated to within a Frame.
-/// </summary>
-public sealed partial class HomePage : Page
+namespace SmartTrain
 {
-    public HomePage()
+    public sealed partial class HomePage : Page
     {
-        this.InitializeComponent();
-        LoadDashboard();
-    }
+        private string profilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "user_profile.json");
 
-    private void LoadDashboard()
-    {
-        // 1. Встановлюємо сьогоднішню дату
-        DateText.Text = DateTime.Now.ToString("dd MMMM yyyy, dddd");
-
-        // 2. Читаємо профіль користувача, щоб взяти ім'я та серію
-        string profilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "user_profile.json");
-
-        if (File.Exists(profilePath))
+        // масив мотиваційних фраз
+        private string[] motivations = new string[]
         {
-            string json = File.ReadAllText(profilePath);
-            var user = JsonSerializer.Deserialize<UserProfile>(json) ?? new UserProfile();
+            "Готовий стати кращою версією себе сьогодні? Твій план вже чекає!",
+            "Дисципліна — це міст між цілями та досягненнями. Почнемо?",
+            "Не чекай ідеального моменту, бери цей момент і роби його ідеальним!",
+            "Кожне тренування робить тебе на крок ближчим до мрії. Не зупиняйся!",
+            "Твоє тіло може все. Головне — переконати в цьому свій розум!"
+        };
 
-            // Вставляємо дані в інтерфейс
-            GreetingText.Text = $"Привіт, {user.UserName}!";
-            CurrentStreakText.Text = user.CurrentStreak.ToString();
-            RecordStreakText.Text = $"Рекорд серії: {user.RecordStreak}";
+        public HomePage()
+        {
+            this.InitializeComponent();
+            LoadDashboard();
         }
-        else
+
+        private void LoadDashboard()
         {
-            GreetingText.Text = "Привіт, Атлете!";
+            // сьогоднішня дата
+            DateText.Text = DateTime.Now.ToString("dd MMMM yyyy, dddd");
+
+            // мотивація
+            Random rnd = new Random();
+            MotivationText.Text = motivations[rnd.Next(motivations.Length)];
+
+            // профіль та вогник
+            if (File.Exists(profilePath))
+            {
+                string json = File.ReadAllText(profilePath);
+                var user = JsonSerializer.Deserialize<UserProfile>(json) ?? new UserProfile();
+
+                // різниця між минулим днем та сьогодні
+                TimeSpan timeSinceLastWorkout = DateTime.Now.Date - user.LastWorkoutDate.Date;
+
+                // пройшло БІЛЬШЕ 1 дня
+                if (timeSinceLastWorkout.Days > 1 && user.CurrentStreak > 0)
+                {
+                    user.CurrentStreak = 0;
+
+                    // запис скинутого вогника
+                    string updatedJson = JsonSerializer.Serialize(user, new JsonSerializerOptions { WriteIndented = true });
+                    File.WriteAllText(profilePath, updatedJson);
+                }
+
+                // актуальні дані вивод на екран
+                GreetingText.Text = $"Привіт, {user.UserName}!";
+                CurrentStreakText.Text = user.CurrentStreak.ToString();
+                RecordStreakText.Text = $"Рекорд: {user.RecordStreak}";
+            }
+            else
+            {
+                GreetingText.Text = "Привіт, Атлете!";
+                MotivationText.Text = "Створи профіль, щоб розпочати свій шлях!";
+            }
         }
     }
 }

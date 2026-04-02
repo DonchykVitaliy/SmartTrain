@@ -226,7 +226,7 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
         
         private void InitTypeTables()
         {
-            _typeNameTable = new string[61];
+            _typeNameTable = new string[64];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
@@ -284,12 +284,15 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
             _typeNameTable[54] = "SmartTrain.MainWindow";
             _typeNameTable[55] = "Microsoft.UI.Xaml.Window";
             _typeNameTable[56] = "SmartTrain.UserProfile";
-            _typeNameTable[57] = "SmartTrain.WorkoutPage";
-            _typeNameTable[58] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[59] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
-            _typeNameTable[60] = "Int32";
+            _typeNameTable[57] = "Microsoft.UI.Xaml.Controls.ProgressRing";
+            _typeNameTable[58] = "Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings";
+            _typeNameTable[59] = "SmartTrain.StatisticsPage";
+            _typeNameTable[60] = "SmartTrain.WorkoutPage";
+            _typeNameTable[61] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[62] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[63] = "Int32";
 
-            _typeTable = new global::System.Type[61];
+            _typeTable = new global::System.Type[64];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
@@ -347,10 +350,13 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
             _typeTable[54] = typeof(global::SmartTrain.MainWindow);
             _typeTable[55] = typeof(global::Microsoft.UI.Xaml.Window);
             _typeTable[56] = typeof(global::SmartTrain.UserProfile);
-            _typeTable[57] = typeof(global::SmartTrain.WorkoutPage);
-            _typeTable[58] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[59] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
-            _typeTable[60] = typeof(global::System.Int32);
+            _typeTable[57] = typeof(global::Microsoft.UI.Xaml.Controls.ProgressRing);
+            _typeTable[58] = typeof(global::Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings);
+            _typeTable[59] = typeof(global::SmartTrain.StatisticsPage);
+            _typeTable[60] = typeof(global::SmartTrain.WorkoutPage);
+            _typeTable[61] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[62] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[63] = typeof(global::System.Int32);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -399,8 +405,10 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
         private object Activate_53_InfoBadge() { return new global::Microsoft.UI.Xaml.Controls.InfoBadge(); }
         private object Activate_54_MainWindow() { return new global::SmartTrain.MainWindow(); }
         private object Activate_56_UserProfile() { return new global::SmartTrain.UserProfile(); }
-        private object Activate_57_WorkoutPage() { return new global::SmartTrain.WorkoutPage(); }
-        private object Activate_58_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_57_ProgressRing() { return new global::Microsoft.UI.Xaml.Controls.ProgressRing(); }
+        private object Activate_59_StatisticsPage() { return new global::SmartTrain.StatisticsPage(); }
+        private object Activate_60_WorkoutPage() { return new global::SmartTrain.WorkoutPage(); }
+        private object Activate_61_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
         private void StaticInitializer_4_AchievementsPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SmartTrain.AchievementsPage).TypeHandle);
         private void StaticInitializer_7_GoalPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SmartTrain.GoalPage).TypeHandle);
@@ -434,9 +442,12 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
         private void StaticInitializer_53_InfoBadge() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.InfoBadge).TypeHandle);
         private void StaticInitializer_54_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SmartTrain.MainWindow).TypeHandle);
         private void StaticInitializer_56_UserProfile() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SmartTrain.UserProfile).TypeHandle);
-        private void StaticInitializer_57_WorkoutPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SmartTrain.WorkoutPage).TypeHandle);
-        private void StaticInitializer_58_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
-        private void StaticInitializer_59_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
+        private void StaticInitializer_57_ProgressRing() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.ProgressRing).TypeHandle);
+        private void StaticInitializer_58_ProgressRingTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings).TypeHandle);
+        private void StaticInitializer_59_StatisticsPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SmartTrain.StatisticsPage).TypeHandle);
+        private void StaticInitializer_60_WorkoutPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SmartTrain.WorkoutPage).TypeHandle);
+        private void StaticInitializer_61_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
+        private void StaticInitializer_62_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -450,7 +461,7 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
             var newItem = (global::System.Object)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_59_IList(object instance, object item)
+        private void VectorAdd_62_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -921,18 +932,46 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 57:   //  SmartTrain.WorkoutPage
+            case 57:   //  Microsoft.UI.Xaml.Controls.ProgressRing
+                userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Control"));
+                userType.Activator = Activate_57_ProgressRing;
+                userType.StaticInitializer = StaticInitializer_57_ProgressRing;
+                userType.AddMemberName("Value");
+                userType.AddMemberName("Minimum");
+                userType.AddMemberName("Maximum");
+                userType.AddMemberName("IsIndeterminate");
+                userType.AddMemberName("IsActive");
+                userType.AddMemberName("TemplateSettings");
+                xamlType = userType;
+                break;
+
+            case 58:   //  Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings
+                userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
+                userType.StaticInitializer = StaticInitializer_58_ProgressRingTemplateSettings;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 59:   //  SmartTrain.StatisticsPage
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_57_WorkoutPage;
-                userType.StaticInitializer = StaticInitializer_57_WorkoutPage;
+                userType.Activator = Activate_59_StatisticsPage;
+                userType.StaticInitializer = StaticInitializer_59_StatisticsPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 58:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+            case 60:   //  SmartTrain.WorkoutPage
+                userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_60_WorkoutPage;
+                userType.StaticInitializer = StaticInitializer_60_WorkoutPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 61:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_58_TreeViewNode;
-                userType.StaticInitializer = StaticInitializer_58_TreeViewNode;
+                userType.Activator = Activate_61_TreeViewNode;
+                userType.StaticInitializer = StaticInitializer_61_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -944,15 +983,15 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 59:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+            case 62:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_59_IList;
-                userType.CollectionAdd = VectorAdd_59_IList;
+                userType.StaticInitializer = StaticInitializer_62_IList;
+                userType.CollectionAdd = VectorAdd_62_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 60:   //  Int32
+            case 63:   //  Int32
                 xamlType = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
@@ -1874,52 +1913,107 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
             var that = (global::SmartTrain.MainWindow)instance;
             that.CurrentUser = (global::SmartTrain.UserProfile)Value;
         }
-        private object get_90_TreeViewNode_Children(object instance)
+        private object get_90_ProgressRing_Value(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            return that.Value;
+        }
+        private void set_90_ProgressRing_Value(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            that.Value = (global::System.Double)Value;
+        }
+        private object get_91_ProgressRing_Minimum(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            return that.Minimum;
+        }
+        private void set_91_ProgressRing_Minimum(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            that.Minimum = (global::System.Double)Value;
+        }
+        private object get_92_ProgressRing_Maximum(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            return that.Maximum;
+        }
+        private void set_92_ProgressRing_Maximum(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            that.Maximum = (global::System.Double)Value;
+        }
+        private object get_93_ProgressRing_IsIndeterminate(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            return that.IsIndeterminate;
+        }
+        private void set_93_ProgressRing_IsIndeterminate(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            that.IsIndeterminate = (global::System.Boolean)Value;
+        }
+        private object get_94_ProgressRing_IsActive(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            return that.IsActive;
+        }
+        private void set_94_ProgressRing_IsActive(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            that.IsActive = (global::System.Boolean)Value;
+        }
+        private object get_95_ProgressRing_TemplateSettings(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            return that.TemplateSettings;
+        }
+        private object get_96_TreeViewNode_Children(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Children;
         }
-        private object get_91_TreeViewNode_Content(object instance)
+        private object get_97_TreeViewNode_Content(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Content;
         }
-        private void set_91_TreeViewNode_Content(object instance, object Value)
+        private void set_97_TreeViewNode_Content(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.Content = (global::System.Object)Value;
         }
-        private object get_92_TreeViewNode_Depth(object instance)
+        private object get_98_TreeViewNode_Depth(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Depth;
         }
-        private object get_93_TreeViewNode_HasChildren(object instance)
+        private object get_99_TreeViewNode_HasChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasChildren;
         }
-        private object get_94_TreeViewNode_HasUnrealizedChildren(object instance)
+        private object get_100_TreeViewNode_HasUnrealizedChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasUnrealizedChildren;
         }
-        private void set_94_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
+        private void set_100_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.HasUnrealizedChildren = (global::System.Boolean)Value;
         }
-        private object get_95_TreeViewNode_IsExpanded(object instance)
+        private object get_101_TreeViewNode_IsExpanded(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.IsExpanded;
         }
-        private void set_95_TreeViewNode_IsExpanded(object instance, object Value)
+        private void set_101_TreeViewNode_IsExpanded(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.IsExpanded = (global::System.Boolean)Value;
         }
-        private object get_96_TreeViewNode_Parent(object instance)
+        private object get_102_TreeViewNode_Parent(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Parent;
@@ -2561,50 +2655,91 @@ namespace SmartTrain.SmartTrain_XamlTypeInfo
                 xamlMember.Getter = get_89_MainWindow_CurrentUser;
                 xamlMember.Setter = set_89_MainWindow_CurrentUser;
                 break;
+            case "Microsoft.UI.Xaml.Controls.ProgressRing.Value":
+                userType = (global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
+                xamlMember = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlMember(this, "Value", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_90_ProgressRing_Value;
+                xamlMember.Setter = set_90_ProgressRing_Value;
+                break;
+            case "Microsoft.UI.Xaml.Controls.ProgressRing.Minimum":
+                userType = (global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
+                xamlMember = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlMember(this, "Minimum", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_91_ProgressRing_Minimum;
+                xamlMember.Setter = set_91_ProgressRing_Minimum;
+                break;
+            case "Microsoft.UI.Xaml.Controls.ProgressRing.Maximum":
+                userType = (global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
+                xamlMember = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlMember(this, "Maximum", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_92_ProgressRing_Maximum;
+                xamlMember.Setter = set_92_ProgressRing_Maximum;
+                break;
+            case "Microsoft.UI.Xaml.Controls.ProgressRing.IsIndeterminate":
+                userType = (global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
+                xamlMember = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlMember(this, "IsIndeterminate", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_93_ProgressRing_IsIndeterminate;
+                xamlMember.Setter = set_93_ProgressRing_IsIndeterminate;
+                break;
+            case "Microsoft.UI.Xaml.Controls.ProgressRing.IsActive":
+                userType = (global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
+                xamlMember = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlMember(this, "IsActive", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_94_ProgressRing_IsActive;
+                xamlMember.Setter = set_94_ProgressRing_IsActive;
+                break;
+            case "Microsoft.UI.Xaml.Controls.ProgressRing.TemplateSettings":
+                userType = (global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
+                xamlMember = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlMember(this, "TemplateSettings", "Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings");
+                xamlMember.Getter = get_95_ProgressRing_TemplateSettings;
+                xamlMember.SetIsReadOnly();
+                break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Children":
                 userType = (global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlMember(this, "Children", "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>");
-                xamlMember.Getter = get_90_TreeViewNode_Children;
+                xamlMember.Getter = get_96_TreeViewNode_Children;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Content":
                 userType = (global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlMember(this, "Content", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_91_TreeViewNode_Content;
-                xamlMember.Setter = set_91_TreeViewNode_Content;
+                xamlMember.Getter = get_97_TreeViewNode_Content;
+                xamlMember.Setter = set_97_TreeViewNode_Content;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Depth":
                 userType = (global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlMember(this, "Depth", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_92_TreeViewNode_Depth;
+                xamlMember.Getter = get_98_TreeViewNode_Depth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasChildren":
                 userType = (global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlMember(this, "HasChildren", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_93_TreeViewNode_HasChildren;
+                xamlMember.Getter = get_99_TreeViewNode_HasChildren;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasUnrealizedChildren":
                 userType = (global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlMember(this, "HasUnrealizedChildren", "Boolean");
-                xamlMember.Getter = get_94_TreeViewNode_HasUnrealizedChildren;
-                xamlMember.Setter = set_94_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Getter = get_100_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Setter = set_100_TreeViewNode_HasUnrealizedChildren;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.IsExpanded":
                 userType = (global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlMember(this, "IsExpanded", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_95_TreeViewNode_IsExpanded;
-                xamlMember.Setter = set_95_TreeViewNode_IsExpanded;
+                xamlMember.Getter = get_101_TreeViewNode_IsExpanded;
+                xamlMember.Setter = set_101_TreeViewNode_IsExpanded;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Parent":
                 userType = (global::SmartTrain.SmartTrain_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::SmartTrain.SmartTrain_XamlTypeInfo.XamlMember(this, "Parent", "Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember.Getter = get_96_TreeViewNode_Parent;
+                xamlMember.Getter = get_102_TreeViewNode_Parent;
                 xamlMember.SetIsReadOnly();
                 break;
             }

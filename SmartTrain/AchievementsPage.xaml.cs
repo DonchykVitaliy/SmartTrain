@@ -9,26 +9,25 @@ using System.Text.Json;
 
 namespace SmartTrain
 {
-    // Допоміжний клас-модель для відображення кожної картки в списку
+    // клас для відображення карток
     public class AchievementViewItem
     {
         public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public bool IsUnlocked { get; set; }
 
-        // Якщо відкрито - кубок, якщо ні - порожній рядок (невидимий символ)
+        // відкрито = кубок, якщо ні = нічого
         public string Icon => IsUnlocked ? "🏆" : " ";
 
-        // Відкриті досягнення яскраві, заблоковані - напівпрозорі (50%)
+        //відкриті яскраві, заблоковані - напівпрозорі
         public double CardOpacity => IsUnlocked ? 1.0 : 0.5;
 
-        // Текст статусу
         public string StatusText => IsUnlocked ? "Відкрито" : "Заблоковано";
 
-        // Іконка статусу (Галочка або Замочок)
+        // галочка або замок статусу
         public string StatusGlyph => IsUnlocked ? "\xE73E" : "\xE72E";
 
-        // Колір статусу (Зелений або Сірий)
+        // колір статусу (зелений або сірий)
         public SolidColorBrush StatusColorBrush => IsUnlocked
             ? new SolidColorBrush(Windows.UI.Color.FromArgb(255, 144, 238, 144)) // LightGreen
             : new SolidColorBrush(Windows.UI.Color.FromArgb(255, 128, 128, 128)); // Gray
@@ -51,7 +50,7 @@ namespace SmartTrain
 
         private void LoadAchievementsData()
         {
-            // 1. Читаємо актуальний профіль користувача
+            // читка профілю користувача
             UserProfile currentUser = new UserProfile();
             if (File.Exists(profilePath))
             {
@@ -59,13 +58,13 @@ namespace SmartTrain
                 currentUser = JsonSerializer.Deserialize<UserProfile>(json) ?? new UserProfile();
             }
 
-            // 2. Формуємо список для екрану
+            // формуємо список для сторінки
             List<AchievementViewItem> displayList = new List<AchievementViewItem>();
 
-            // Проходимося по всій базі з 25 досягнень, яку ми створили раніше
+            // перевірка всіє бази досягнень
             foreach (var ach in AchievementManager.AllAchievements)
             {
-                // Перевіряємо, чи є ID цього досягнення у списку відкритих
+                //чи є ID цього досягнення у списку відкритих
                 bool unlocked = currentUser.UnlockedAchievements.Contains(ach.Id);
 
                 displayList.Add(new AchievementViewItem
@@ -76,7 +75,7 @@ namespace SmartTrain
                 });
             }
 
-            // 3. Відправляємо дані в ListView
+            //всі дані в ListView
             AchievementsList.ItemsSource = displayList;
         }
     }

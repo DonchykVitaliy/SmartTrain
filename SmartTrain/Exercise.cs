@@ -7,12 +7,12 @@ namespace SmartTrain
     {
         WeightLoss,         // Схуднення та рельєф
         MuscleGain,         // Набір м'язової маси
-        KeepFit,            // Підтримка форми (тонус)
+        KeepFit,            // Підтримка форми
         Strength,           // Абсолютна сила
-        HealthAndMobility   // Здоров'я, довголіття, розтяжка
+        HealthAndMobility   // Здоров'я
     }
 
-    // Переліки (Enums) краще тримати тут або в окремому файлі для зручності
+    // налаштування
     public enum DifficultyLevel { Easy, AboveAverage, Hard }
     public enum TrainingType { Home, Gym }
     public enum FitnessLevelRequired { Beginner, Intermediate, Pro }
@@ -20,31 +20,30 @@ namespace SmartTrain
 
     public sealed class Exercise
     {
-        // Базова інформація
+        //базоов інформація
         public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public string PlanName { get; set; } = string.Empty;
 
-        // Нові поля для фільтрації
+        //фільтри
         public DifficultyLevel Difficulty { get; set; }
         public TrainingType Location { get; set; }
         public int EstimatedTimeMinutes { get; set; }
 
-        // Теги та обмеження
+        //теги + обмеження
         public List<int> AgeRange { get; set; } = new List<int>();
         public FitnessLevelRequired RequiredLevel { get; set; }
         public double MinWeight { get; set; }
         public double MaxWeight { get; set; }
         public double MinHeight { get; set; }
         public double MaxHeight { get; set; }
-        public int Sets { get; set; } = 3; // Базова кількість підходів
-        //  цей рядок до інших властивостей вправи
+        public int Sets { get; set; } = 3; // базова кількість підходів
         public List<WorkoutGoal> SuitableGoals { get; set; } = new List<WorkoutGoal>();
 
-        // Порожній конструктор обов'язковий для роботи JSON-серіалізатора
+        // для роботи JSON-серіалізатора
         public Exercise() { }
 
-        // Оновлений конструктор для створення об'єктів вручну
+        // оновлений конструктор для створення об'єктів вручну
         public Exercise(string name, string description, DifficultyLevel difficulty, TrainingType location, int time)
         {
             Name = name;
@@ -89,18 +88,18 @@ public string LevelTranslated => RequiredLevel switch
             $"Мінімальний рівень: {LevelTranslated}";
 
 
-        // null - ще не чіпали, true - виконано (галочка), false - пропущено (хрестик)
+        // null - не чіпали, true - виконано (галочка), false - пропущено (хрестик)
         public bool? IsCompleted { get; set; } = null;
 
-        // Колір фону залежно від статусу
+        // колір фону залежно від статусу
         [System.Text.Json.Serialization.JsonIgnore]
         public object CardBackground
         {
             get
             {
-                if (IsCompleted == true) return new Microsoft.UI.Xaml.Media.SolidColorBrush(Windows.UI.Color.FromArgb(40, 76, 175, 80)); // Ледве зелений
-                if (IsCompleted == false) return new Microsoft.UI.Xaml.Media.SolidColorBrush(Windows.UI.Color.FromArgb(40, 244, 67, 54)); // Ледве червоний
-                // Стандартний колір картки з теми
+                if (IsCompleted == true) return new Microsoft.UI.Xaml.Media.SolidColorBrush(Windows.UI.Color.FromArgb(40, 76, 175, 80)); // зелений
+                if (IsCompleted == false) return new Microsoft.UI.Xaml.Media.SolidColorBrush(Windows.UI.Color.FromArgb(40, 244, 67, 54)); // червоний
+                // стандартний колір картки
                 return Microsoft.UI.Xaml.Application.Current.Resources["CardBackgroundFillColorDefaultBrush"];
             }
         }

@@ -6,14 +6,14 @@ using System.Text.Json;
 
 namespace SmartTrain
 {
-    // Допоміжний клас, куди ми збираємо всю історію користувача
+    // клас де збирається вся історія користувача
     public class AchievementStats
     {
         public int TotalCompletedDays { get; set; } = 0;
         public int TotalMinutes { get; set; } = 0;
         public int TotalSets { get; set; } = 0;
         public int CompletedWeeks { get; set; } = 0;
-        public int GoldenWeeks { get; set; } = 0; // Тижні, закриті на 100%
+        public int GoldenWeeks { get; set; } = 0; // тижні на 100%
     }
 
     public class Achievement
@@ -21,8 +21,6 @@ namespace SmartTrain
         public string Id { get; set; } = string.Empty;
         public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
-
-        // Тепер умова перевірки приймає ще й загальну статистику (Stats)
         public Func<UserProfile, WeeklyPlan, AchievementStats, bool> CheckCondition { get; set; } = (u, w, s) => false;
     }
 
@@ -118,26 +116,26 @@ namespace SmartTrain
         {
             if (currentUser == null) return;
 
-            // 1. Збираємо всю статистику з історії користувача
+            // статистикв з історії користувача
             AchievementStats stats = CalculateHistoricalStats();
 
             bool profileChanged = false;
 
-            // 2. Перевіряємо кожне досягнення
+            // перевірка кожного досягнення
             foreach (var ach in AllAchievements)
             {
-                // Якщо досягнення ще НЕ розблоковано І умова виконується
+                // досягнення ще НЕ розблоковано і умова виконана
                 if (!currentUser.UnlockedAchievements.Contains(ach.Id) && ach.CheckCondition(currentUser, currentPlan, stats))
                 {
                     currentUser.UnlockedAchievements.Add(ach.Id);
                     profileChanged = true;
 
-                    // Викликаємо віконце в інтерфейсі
+                    // віконце значка
                     OnAchievementUnlocked?.Invoke(ach);
                 }
             }
 
-            // 3. Зберігаємо профіль, якщо розблокували щось нове
+            // зберігаємо у профіль
             if (profileChanged)
             {
                 string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "user_profile.json");
@@ -146,7 +144,7 @@ namespace SmartTrain
             }
         }
 
-        // Цей метод сканує папку History і рахує всі успіхи користувача
+        // скан папки History і підразунок успіхів
         private static AchievementStats CalculateHistoricalStats()
         {
             var stats = new AchievementStats();
@@ -184,7 +182,7 @@ namespace SmartTrain
                             }
                             else if (workout.Exercises.Count > 0)
                             {
-                                isGoldenWeek = false; // Якщо був день з вправами, але він не завершений
+                                isGoldenWeek = false; // був день з вправами, але він не завершений
                             }
                         }
 
@@ -195,7 +193,7 @@ namespace SmartTrain
                         }
                     }
                 }
-                catch { /* Ігноруємо пошкоджені файли історії, якщо вони є */ }
+                catch { /* ігнор поганих файлів історії*/ }
             }
 
             return stats;

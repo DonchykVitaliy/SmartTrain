@@ -14,8 +14,8 @@
 
             <TextBlock x:Name="GreetingText" FontSize="36" FontWeight="Bold"/>
 
-            <TextBlock Text="Готовий стати кращою версією себе сьогодні? Твій план вже чекає!" 
-                   FontSize="16" FontStyle="Italic" Foreground="LightGray" Margin="0,0,0,20"/>
+            <TextBlock x:Name="MotivationText" 
+           FontSize="16" FontStyle="Italic" Foreground="LightGray" Margin="0,0,0,20" TextWrapping="Wrap"/>
 
             <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
                 BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"

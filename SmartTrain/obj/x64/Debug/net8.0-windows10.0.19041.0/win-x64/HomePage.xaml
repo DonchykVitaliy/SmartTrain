@@ -14,8 +14,8 @@
 
             <TextBlock x:ConnectionId='3' x:Name="GreetingText" FontSize="36" FontWeight="Bold"/>
 
-            <TextBlock Text="Готовий стати кращою версією себе сьогодні? Твій план вже чекає!" 
-                   FontSize="16" FontStyle="Italic" Foreground="LightGray" Margin="0,0,0,20"/>
+            <TextBlock x:ConnectionId='4' x:Name="MotivationText" 
+           FontSize="16" FontStyle="Italic" Foreground="LightGray" Margin="0,0,0,20" TextWrapping="Wrap"/>
 
             <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
                 BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
@@ -27,11 +27,11 @@
                         <TextBlock Text="Серія тренувань" FontSize="16" Foreground="Gray"/>
 
                         <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Bottom">
-                            <TextBlock x:ConnectionId='5' x:Name="CurrentStreakText" Text="0" FontSize="32" FontWeight="Bold"/>
+                            <TextBlock x:ConnectionId='6' x:Name="CurrentStreakText" Text="0" FontSize="32" FontWeight="Bold"/>
                             <TextBlock Text="днів" FontSize="16" VerticalAlignment="Bottom" Margin="0,0,0,6"/>
                         </StackPanel>
 
-                        <TextBlock x:ConnectionId='4' x:Name="RecordStreakText" Text="Рекорд: 0" FontSize="12" Foreground="Gray" Margin="0,5,0,0"/>
+                        <TextBlock x:ConnectionId='5' x:Name="RecordStreakText" Text="Рекорд: 0" FontSize="12" Foreground="Gray" Margin="0,5,0,0"/>
                     </StackPanel>
                 </StackPanel>
             </Border>

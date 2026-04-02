@@ -1,0 +1,511 @@
+{
+  "WeekNumber": 2,
+  "Workouts": [
+    {
+      "Day": 1,
+      "Exercises": [
+        {
+          "Name": "\u041F\u0440\u0438\u0441\u0456\u0434\u0430\u043D\u043D\u044F \u0437\u0456 \u0448\u0442\u0430\u043D\u0433\u043E\u044E \u043D\u0430 \u043F\u043B\u0435\u0447\u0430\u0445",
+          "Description": "\u041A\u043E\u0440\u043E\u043B\u044C \u0431\u0430\u0437\u043E\u0432\u0438\u0445 \u0432\u043F\u0440\u0430\u0432.",
+          "PlanName": "",
+          "Difficulty": 2,
+          "Location": 1,
+          "EstimatedTimeMinutes": 30,
+          "AgeRange": [
+            16,
+            55
+          ],
+          "RequiredLevel": 2,
+          "MinWeight": 55,
+          "MaxWeight": 140,
+          "MinHeight": 155,
+          "MaxHeight": 210,
+          "Sets": 6,
+          "SuitableGoals": [
+            3,
+            1
+          ],
+          "IsCompleted": true
+        },
+        {
+          "Name": "\u0416\u0438\u043C \u0410\u0440\u043D\u043E\u043B\u044C\u0434\u0430",
+          "Description": "\u041C\u043E\u0434\u0438\u0444\u0456\u043A\u0430\u0446\u0456\u044F \u0436\u0438\u043C\u0443 \u0433\u0430\u043D\u0442\u0435\u043B\u0435\u0439 \u0434\u043B\u044F \u043F\u043B\u0435\u0447\u0435\u0439.",
+          "PlanName": "",
+          "Difficulty": 1,
+          "Location": 1,
+          "EstimatedTimeMinutes": 18,
+          "AgeRange": [
+            16,
+            60
+          ],
+          "RequiredLevel": 1,
+          "MinWeight": 55,
+          "MaxWeight": 130,
+          "MinHeight": 150,
+          "MaxHeight": 210,
+          "Sets": 6,
+          "SuitableGoals": [
+            1,
+            2
+          ],
+          "IsCompleted": false
+        },
+        {
+          "Name": "\u0412\u0438\u043F\u0430\u0434\u0438 \u0432\u043F\u0435\u0440\u0435\u0434",
+          "Description": "\u0424\u043E\u0440\u043C\u0443\u0432\u0430\u043D\u043D\u044F \u043A\u0432\u0430\u0434\u0440\u0438\u0446\u0435\u043F\u0441\u0456\u0432 \u0442\u0430 \u0441\u0456\u0434\u043D\u0438\u0446\u044C.",
+          "PlanName": "",
+          "Difficulty": 1,
+          "Location": 0,
+          "EstimatedTimeMinutes": 18,
+          "AgeRange": [
+            12,
+            65
+          ],
+          "RequiredLevel": 1,
+          "MinWeight": 40,
+          "MaxWeight": 130,
+          "MinHeight": 140,
+          "MaxHeight": 210,
+          "Sets": 6,
+          "SuitableGoals": [
+            2,
+            1,
+            0
+          ],
+          "IsCompleted": true
+        },
+        {
+          "Name": "\u0422\u044F\u0433\u0430 \u0448\u0442\u0430\u043D\u0433\u0438 \u0434\u043E \u043F\u0456\u0434\u0431\u043E\u0440\u0456\u0434\u0434\u044F",
+          "Description": "\u041A\u043E\u043C\u043F\u043B\u0435\u043A\u0441\u043D\u0438\u0439 \u0440\u043E\u0437\u0432\u0438\u0442\u043E\u043A \u043F\u043B\u0435\u0447\u043E\u0432\u043E\u0433\u043E \u043F\u043E\u044F\u0441\u0443.",
+          "PlanName": "",
+          "Difficulty": 1,
+          "Location": 1,
+          "EstimatedTimeMinutes": 18,
+          "AgeRange": [
+            16,
+            60
+          ],
+          "RequiredLevel": 1,
+          "MinWeight": 55,
+          "MaxWeight": 140,
+          "MinHeight": 150,
+          "MaxHeight": 210,
+          "Sets": 6,
+          "SuitableGoals": [
+            1,
+            2
+          ],
+          "IsCompleted": true
+        },
+        {
+          "Name": "\u0420\u043E\u0437\u0433\u0438\u043D\u0430\u043D\u043D\u044F \u043D\u0430 \u0442\u0440\u0438\u0446\u0435\u043F\u0441 \u0437 \u043C\u043E\u0442\u0443\u0437\u043A\u043E\u044E",
+          "Description": "\u0406\u0437\u043E\u043B\u044F\u0446\u0456\u044F.",
+          "PlanName": "",
+          "Difficulty": 0,
+          "Location": 1,
+          "EstimatedTimeMinutes": 12,
+          "AgeRange": [
+            14,
+            75
+          ],
+          "RequiredLevel": 0,
+          "MinWeight": 40,
+          "MaxWeight": 150,
+          "MinHeight": 140,
+          "MaxHeight": 220,
+          "Sets": 6,
+          "SuitableGoals": [
+            2,
+            1
+          ],
+          "IsCompleted": true
+        },
+        {
+          "Name": "\u0420\u0443\u043C\u0443\u043D\u0441\u044C\u043A\u0430 \u0442\u044F\u0433\u0430",
+          "Description": "\u0415\u0444\u0435\u043A\u0442\u0438\u0432\u043D\u0430 \u0440\u043E\u0437\u0442\u044F\u0436\u043A\u0430 \u0437\u0430\u0434\u043D\u044C\u043E\u0457 \u043F\u043E\u0432\u0435\u0440\u0445\u043D\u0456 \u0441\u0442\u0435\u0433\u043D\u0430.",
+          "PlanName": "",
+          "Difficulty": 1,
+          "Location": 1,
+          "EstimatedTimeMinutes": 24,
+          "AgeRange": [
+            16,
+            60
+          ],
+          "RequiredLevel": 1,
+          "MinWeight": 55,
+          "MaxWeight": 140,
+          "MinHeight": 150,
+          "MaxHeight": 210,
+          "Sets": 6,
+          "SuitableGoals": [
+            1,
+            4
+          ],
+          "IsCompleted": true
+        },
+        {
+          "Name": "\u041A\u043E\u043D\u0446\u0435\u043D\u0442\u0440\u043E\u0432\u0430\u043D\u0438\u0439 \u043F\u0456\u0434\u0439\u043E\u043C \u043D\u0430 \u0431\u0456\u0446\u0435\u043F\u0441",
+          "Description": "\u0424\u043E\u0440\u043C\u0443\u0432\u0430\u043D\u043D\u044F \u043F\u0456\u043A\u0443 \u0431\u0456\u0446\u0435\u043F\u0441\u0430.",
+          "PlanName": "",
+          "Difficulty": 0,
+          "Location": 1,
+          "EstimatedTimeMinutes": 12,
+          "AgeRange": [
+            16,
+            65
+          ],
+          "RequiredLevel": 0,
+          "MinWeight": 45,
+          "MaxWeight": 140,
+          "MinHeight": 140,
+          "MaxHeight": 210,
+          "Sets": 6,
+          "SuitableGoals": [
+            2,
+            1
+          ],
+          "IsCompleted": true
+        }
+      ],
+      "IsDayCompleted": true,
+      "CompletionPercentage": 86
+    },
+    {
+      "Day": 3,
+      "Exercises": [
+        {
+          "Name": "\u0420\u043E\u0437\u0433\u0438\u043D\u0430\u043D\u043D\u044F \u043D\u0456\u0433 \u0443 \u0442\u0440\u0435\u043D\u0430\u0436\u0435\u0440\u0456",
+          "Description": "\u0406\u0437\u043E\u043B\u044F\u0446\u0456\u044F \u043A\u0432\u0430\u0434\u0440\u0438\u0446\u0435\u043F\u0441\u0430.",
+          "PlanName": "",
+          "Difficulty": 0,
+          "Location": 1,
+          "EstimatedTimeMinutes": 18,
+          "AgeRange": [
+            14,
+            75
+          ],
+          "RequiredLevel": 0,
+          "MinWeight": 40,
+          "MaxWeight": 150,
+          "MinHeight": 140,
+          "MaxHeight": 210,
+          "Sets": 6,
+          "SuitableGoals": [
+            2,
+            1
+          ],
+          "IsCompleted": null
+        },
+        {
+          "Name": "\u041C\u0430\u0445\u0438 \u0433\u0430\u043D\u0442\u0435\u043B\u044F\u043C\u0438 \u043F\u0435\u0440\u0435\u0434 \u0441\u043E\u0431\u043E\u044E",
+          "Description": "\u0406\u0437\u043E\u043B\u044F\u0446\u0456\u044F \u043F\u0435\u0440\u0435\u0434\u043D\u044C\u043E\u0457 \u0434\u0435\u043B\u044C\u0442\u0438.",
+          "PlanName": "",
+          "Difficulty": 0,
+          "Location": 1,
+          "EstimatedTimeMinutes": 12,
+          "AgeRange": [
+            14,
+            70
+          ],
+          "RequiredLevel": 0,
+          "MinWeight": 45,
+          "MaxWeight": 150,
+          "MinHeight": 140,
+          "MaxHeight": 220,
+          "Sets": 6,
+          "SuitableGoals": [
+            2,
+            1
+          ],
+          "IsCompleted": null
+        },
+        {
+          "Name": "\u041C\u043E\u043B\u043E\u0442\u043A\u0438 (Hammer Curls)",
+          "Description": "\u0420\u043E\u0437\u0432\u0438\u0442\u043E\u043A \u0431\u0440\u0430\u0445\u0456\u0430\u043B\u0456\u0441\u0430.",
+          "PlanName": "",
+          "Difficulty": 0,
+          "Location": 1,
+          "EstimatedTimeMinutes": 12,
+          "AgeRange": [
+            14,
+            70
+          ],
+          "RequiredLevel": 0,
+          "MinWeight": 45,
+          "MaxWeight": 150,
+          "MinHeight": 140,
+          "MaxHeight": 210,
+          "Sets": 6,
+          "SuitableGoals": [
+            2,
+            1
+          ],
+          "IsCompleted": null
+        },
+        {
+          "Name": "\u0422\u044F\u0433\u0430 \u0433\u0430\u043D\u0442\u0435\u043B\u0456 \u043E\u0434\u043D\u0456\u0454\u044E \u0440\u0443\u043A\u043E\u044E \u0432 \u043D\u0430\u0445\u0438\u043B\u0456",
+          "Description": "\u0406\u0437\u043E\u043B\u044C\u043E\u0432\u0430\u043D\u0435 \u043E\u043F\u0440\u0430\u0446\u044E\u0432\u0430\u043D\u043D\u044F \u043D\u0430\u0439\u0448\u0438\u0440\u0448\u0438\u0445.",
+          "PlanName": "",
+          "Difficulty": 1,
+          "Location": 1,
+          "EstimatedTimeMinutes": 24,
+          "AgeRange": [
+            16,
+            65
+          ],
+          "RequiredLevel": 0,
+          "MinWeight": 50,
+          "MaxWeight": 150,
+          "MinHeight": 150,
+          "MaxHeight": 210,
+          "Sets": 6,
+          "SuitableGoals": [
+            1,
+            2
+          ],
+          "IsCompleted": null
+        },
+        {
+          "Name": "\u0422\u044F\u0433\u0430 \u0432\u0435\u0440\u0445\u043D\u044C\u043E\u0433\u043E \u0431\u043B\u043E\u043A\u0443 \u0437\u0430 \u0433\u043E\u043B\u043E\u0432\u0443",
+          "Description": "\u0410\u043A\u0446\u0435\u043D\u0442 \u043D\u0430 \u0432\u0435\u0440\u0445 \u0441\u043F\u0438\u043D\u0438.",
+          "PlanName": "",
+          "Difficulty": 1,
+          "Location": 1,
+          "EstimatedTimeMinutes": 18,
+          "AgeRange": [
+            16,
+            60
+          ],
+          "RequiredLevel": 1,
+          "MinWeight": 50,
+          "MaxWeight": 140,
+          "MinHeight": 150,
+          "MaxHeight": 210,
+          "Sets": 6,
+          "SuitableGoals": [
+            1
+          ],
+          "IsCompleted": null
+        },
+        {
+          "Name": "\u0424\u0440\u043E\u043D\u0442\u0430\u043B\u044C\u043D\u0456 \u043F\u0440\u0438\u0441\u0456\u0434\u0430\u043D\u043D\u044F",
+          "Description": "\u0410\u043A\u0446\u0435\u043D\u0442 \u043D\u0430 \u043A\u0432\u0430\u0434\u0440\u0438\u0446\u0435\u043F\u0441 \u0442\u0430 \u043A\u043E\u0440.",
+          "PlanName": "",
+          "Difficulty": 2,
+          "Location": 1,
+          "EstimatedTimeMinutes": 24,
+          "AgeRange": [
+            16,
+            50
+          ],
+          "RequiredLevel": 2,
+          "MinWeight": 60,
+          "MaxWeight": 130,
+          "MinHeight": 160,
+          "MaxHeight": 200,
+          "Sets": 6,
+          "SuitableGoals": [
+            3,
+            1
+          ],
+          "IsCompleted": null
+        },
+        {
+          "Name": "\u041F\u0456\u0434\u0442\u044F\u0433\u0443\u0432\u0430\u043D\u043D\u044F \u0437\u0432\u043E\u0440\u043E\u0442\u043D\u0438\u043C \u0445\u0432\u0430\u0442\u043E\u043C",
+          "Description": "\u0421\u043F\u0438\u043D\u0430 \u0442\u0430 \u0431\u0456\u0446\u0435\u043F\u0441.",
+          "PlanName": "",
+          "Difficulty": 1,
+          "Location": 1,
+          "EstimatedTimeMinutes": 18,
+          "AgeRange": [
+            14,
+            60
+          ],
+          "RequiredLevel": 1,
+          "MinWeight": 45,
+          "MaxWeight": 110,
+          "MinHeight": 150,
+          "MaxHeight": 200,
+          "Sets": 6,
+          "SuitableGoals": [
+            1,
+            2
+          ],
+          "IsCompleted": null
+        }
+      ],
+      "IsDayCompleted": false,
+      "CompletionPercentage": 0
+    },
+    {
+      "Day": 5,
+      "Exercises": [
+        {
+          "Name": "\u0416\u0438\u043C \u0448\u0442\u0430\u043D\u0433\u0438 \u043B\u0435\u0436\u0430\u0447\u0438",
+          "Description": "\u0413\u043E\u043B\u043E\u0432\u043D\u0430 \u0431\u0430\u0437\u043E\u0432\u0430 \u0432\u043F\u0440\u0430\u0432\u0430 \u0434\u043B\u044F \u0433\u0440\u0443\u0434\u0435\u0439.",
+          "PlanName": "",
+          "Difficulty": 1,
+          "Location": 1,
+          "EstimatedTimeMinutes": 30,
+          "AgeRange": [
+            16,
+            65
+          ],
+          "RequiredLevel": 1,
+          "MinWeight": 50,
+          "MaxWeight": 150,
+          "MinHeight": 150,
+          "MaxHeight": 210,
+          "Sets": 6,
+          "SuitableGoals": [
+            1,
+            3
+          ],
+          "IsCompleted": null
+        },
+        {
+          "Name": "\u0412\u0456\u0434\u0436\u0438\u043C\u0430\u043D\u043D\u044F \u043D\u0430 \u0431\u0440\u0443\u0441\u0430\u0445 (\u0433\u0440\u0443\u0434\u043D\u0438\u0439 \u0441\u0442\u0438\u043B\u044C)",
+          "Description": "\u0410\u043A\u0446\u0435\u043D\u0442 \u043D\u0430 \u043D\u0438\u0437 \u0433\u0440\u0443\u0434\u0435\u0439.",
+          "PlanName": "",
+          "Difficulty": 2,
+          "Location": 1,
+          "EstimatedTimeMinutes": 18,
+          "AgeRange": [
+            16,
+            55
+          ],
+          "RequiredLevel": 2,
+          "MinWeight": 55,
+          "MaxWeight": 110,
+          "MinHeight": 150,
+          "MaxHeight": 200,
+          "Sets": 6,
+          "SuitableGoals": [
+            1,
+            3
+          ],
+          "IsCompleted": null
+        },
+        {
+          "Name": "\u0425\u043E\u0434\u044C\u0431\u0430 \u0444\u0435\u0440\u043C\u0435\u0440\u0430",
+          "Description": "\u0417\u043C\u0456\u0446\u043D\u0435\u043D\u043D\u044F \u0445\u0432\u0430\u0442\u0443 \u0442\u0430 \u043A\u043E\u0440\u0443.",
+          "PlanName": "",
+          "Difficulty": 1,
+          "Location": 1,
+          "EstimatedTimeMinutes": 18,
+          "AgeRange": [
+            18,
+            60
+          ],
+          "RequiredLevel": 1,
+          "MinWeight": 60,
+          "MaxWeight": 150,
+          "MinHeight": 155,
+          "MaxHeight": 210,
+          "Sets": 6,
+          "SuitableGoals": [
+            3,
+            1
+          ],
+          "IsCompleted": null
+        },
+        {
+          "Name": "\u0412\u0456\u0434\u0436\u0438\u043C\u0430\u043D\u043D\u044F \u0437 \u0448\u0438\u0440\u043E\u043A\u043E\u044E \u043F\u043E\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u043E\u044E",
+          "Description": "\u0410\u043A\u0446\u0435\u043D\u0442 \u043D\u0430 \u0437\u043E\u0432\u043D\u0456\u0448\u043D\u044E \u0447\u0430\u0441\u0442\u0438\u043D\u0443 \u0433\u0440\u0443\u0434\u043D\u0438\u0445.",
+          "PlanName": "",
+          "Difficulty": 1,
+          "Location": 0,
+          "EstimatedTimeMinutes": 18,
+          "AgeRange": [
+            12,
+            65
+          ],
+          "RequiredLevel": 1,
+          "MinWeight": 45,
+          "MaxWeight": 120,
+          "MinHeight": 140,
+          "MaxHeight": 210,
+          "Sets": 6,
+          "SuitableGoals": [
+            1,
+            2
+          ],
+          "IsCompleted": null
+        },
+        {
+          "Name": "\u041F\u0443\u043B\u043E\u0432\u0435\u0440 \u0437 \u0433\u0430\u043D\u0442\u0435\u043B\u043B\u044E",
+          "Description": "\u0420\u043E\u0437\u0448\u0438\u0440\u0435\u043D\u043D\u044F \u0433\u0440\u0443\u0434\u043D\u043E\u0457 \u043A\u043B\u0456\u0442\u043A\u0438.",
+          "PlanName": "",
+          "Difficulty": 1,
+          "Location": 1,
+          "EstimatedTimeMinutes": 18,
+          "AgeRange": [
+            16,
+            60
+          ],
+          "RequiredLevel": 1,
+          "MinWeight": 50,
+          "MaxWeight": 130,
+          "MinHeight": 150,
+          "MaxHeight": 210,
+          "Sets": 6,
+          "SuitableGoals": [
+            1,
+            4
+          ],
+          "IsCompleted": null
+        },
+        {
+          "Name": "\u041A\u043B\u0430\u0441\u0438\u0447\u043D\u0456 \u0432\u0456\u0434\u0436\u0438\u043C\u0430\u043D\u043D\u044F",
+          "Description": "\u0411\u0430\u0437\u043E\u0432\u0430 \u0432\u043F\u0440\u0430\u0432\u0430 \u043D\u0430 \u0433\u0440\u0443\u0434\u0438 \u0442\u0430 \u0442\u0440\u0438\u0446\u0435\u043F\u0441.",
+          "PlanName": "",
+          "Difficulty": 0,
+          "Location": 0,
+          "EstimatedTimeMinutes": 18,
+          "AgeRange": [
+            10,
+            70
+          ],
+          "RequiredLevel": 0,
+          "MinWeight": 40,
+          "MaxWeight": 130,
+          "MinHeight": 130,
+          "MaxHeight": 210,
+          "Sets": 6,
+          "SuitableGoals": [
+            1,
+            2,
+            0
+          ],
+          "IsCompleted": null
+        },
+        {
+          "Name": "\u0413\u0430\u043A\u043A-\u043F\u0440\u0438\u0441\u0456\u0434\u0430\u043D\u043D\u044F",
+          "Description": "\u0417\u043D\u044F\u0442\u0442\u044F \u043D\u0430\u0432\u0430\u043D\u0442\u0430\u0436\u0435\u043D\u043D\u044F \u0437 \u043F\u043E\u043F\u0435\u0440\u0435\u043A\u0443.",
+          "PlanName": "",
+          "Difficulty": 1,
+          "Location": 1,
+          "EstimatedTimeMinutes": 24,
+          "AgeRange": [
+            16,
+            60
+          ],
+          "RequiredLevel": 1,
+          "MinWeight": 55,
+          "MaxWeight": 150,
+          "MinHeight": 150,
+          "MaxHeight": 210,
+          "Sets": 6,
+          "SuitableGoals": [
+            1,
+            3
+          ],
+          "IsCompleted": null
+        }
+      ],
+      "IsDayCompleted": false,
+      "CompletionPercentage": 0
+    }
+  ],
+  "GeneratedAt": "2026-04-01T00:02:54.1391919+03:00"
+}

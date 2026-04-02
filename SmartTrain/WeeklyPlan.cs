@@ -7,8 +7,6 @@ namespace SmartTrain
     {
         public DayOfWeek Day { get; set; }
         public List<Exercise> Exercises { get; set; } = new List<Exercise>();
-
-        // НОВІ ПОЛЯ
         public bool IsDayCompleted { get; set; } = false;
         public int CompletionPercentage { get; set; } = 0;
 
@@ -21,7 +19,7 @@ namespace SmartTrain
 
     public class WeeklyPlan
     {
-        public int WeekNumber { get; set; } = 1; // Номер тижня
+        public int WeekNumber { get; set; } = 1; // номер тижня
         public List<DailyWorkout> Workouts { get; set; } = new List<DailyWorkout>();
         public DateTime GeneratedAt { get; set; } = DateTime.Now;
     }

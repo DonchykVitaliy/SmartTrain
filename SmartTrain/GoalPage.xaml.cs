@@ -11,14 +11,12 @@ using System.Text.Json;
 
 namespace SmartTrain
 {
-    // Допоміжний клас для малювання карток днів
+    // клас для карток днів
     public class CalendarDay
     {
         public DayOfWeek Day { get; set; }
         public string DayName { get; set; } = string.Empty;
         public bool IsTrainingDay { get; set; }
-
-        // НОВІ ПОЛЯ
         public bool IsDayCompleted { get; set; }
         public int CompletionPercentage { get; set; }
 
@@ -34,7 +32,7 @@ namespace SmartTrain
     {
         private UserProfile currentUser = default!;
         private string profilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "user_profile.json");
-        private int requiredDays = 3; // Кількість днів за замовчуванням
+        private int requiredDays = 3; // днів по дефолту
         private int selectedDaysCount = 0;
 
         public GoalPage()
@@ -43,8 +41,7 @@ namespace SmartTrain
             this.Loaded += GoalPage_Loaded;
         }
 
-        // Цей метод викликається щоразу, коли ми відкриваємо сторінку
-        // Цей метод викличеться, коли сторінка вже 100% буде на екрані
+        //викликається щоразу, коли відкриваємо сторінку
         private async void GoalPage_Loaded(object sender, RoutedEventArgs e)
         {
             if (File.Exists(profilePath))
@@ -54,7 +51,7 @@ namespace SmartTrain
 
                 if (!currentUser.IsGoalSet)
                 {
-                    OpenGoalSetupDialog(); // Викликаємо наш новий розумний метод!
+                    OpenGoalSetupDialog();
                 }
                 else
                 {
@@ -67,7 +64,7 @@ namespace SmartTrain
             }
         }
 
-        // Обробка натискання на кнопки днів (Пн, Вт...)
+        //натискання на дні
         private void DayToggle_Click(object sender, RoutedEventArgs e)
         {
             var toggle = sender as ToggleButton;
@@ -77,7 +74,7 @@ namespace SmartTrain
             {
                 if (selectedDaysCount >= requiredDays)
                 {
-                    // Якщо ліміт вичерпано, не даємо натиснути
+                    // ліміт днів на вибір
                     toggle.IsChecked = false;
                     DaysWarningText.Text = $"Ви вже обрали максимум для вашого рівня.";
                 }
@@ -93,25 +90,22 @@ namespace SmartTrain
                 DaysWarningText.Text = "";
             }
 
-            // Кнопка генерації доступна лише якщо обрано рівно потрібну кількість днів
+            // доступ лише коли достатньо обрано днів
             SetupGoalDialog.IsPrimaryButtonEnabled = (selectedDaysCount == requiredDays);
         }
 
         private void SetupGoalDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
         {
-            // 1. Отримуємо та зберігаємо Ціль з ComboBox
+            // 1. ціль
             var selectedGoalTag = (GoalComboBox.SelectedItem as ComboBoxItem)?.Tag.ToString();
             Enum.TryParse(selectedGoalTag, out WorkoutGoal chosenGoal);
             currentUser.PrimaryGoal = chosenGoal;
-
-            // 2. Отримуємо Навантаження
+            // 2. навантаження
             currentUser.IntensityLevel = (int)IntensitySlider.Value;
-
-            // 3. Збираємо вибрані дні (шукаємо всі натиснуті ToggleButton)
-            // 3. Збираємо вибрані дні (шукаємо всі натиснуті ToggleButton)
+            // 3. дні
             var selectedDays = new List<DayOfWeek>();
 
-            // Тепер ми шукаємо кнопки у правильній панелі!
+            // записуємо які дні були обрані в календар
             foreach (var element in DaysTogglePanel.Children)
             {
                 if (element is ToggleButton tb && tb.IsChecked == true && tb.Tag != null)
@@ -125,7 +119,7 @@ namespace SmartTrain
             currentUser.SelectedTrainingDays = selectedDays;
             currentUser.IsGoalSet = true;
 
-            // Зберігаємо оновлений профіль
+            // оновлення профілю
             string profileJson = JsonSerializer.Serialize(currentUser, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(profilePath, profileJson);
 
@@ -133,7 +127,7 @@ namespace SmartTrain
             // СЕРЦЕ АЛГОРИТМУ ГЕНЕРАЦІЇ ПЛАНУ
             // ==========================================
 
-            // А. Фільтруємо базу вправ (за Ціллю, Віком, Вагою, Зростом)
+            // А. фільтр бази вправ
             var allExercises = ExerciseRepository.GetDefaultExercises();
             var filteredPool = allExercises.Where(ex =>
                 (ex.SuitableGoals.Count == 0 || ex.SuitableGoals.Contains(currentUser.PrimaryGoal)) &&
@@ -142,18 +136,17 @@ namespace SmartTrain
                 currentUser.Height >= ex.MinHeight && currentUser.Height <= ex.MaxHeight
             ).ToList();
 
-            // Якщо раптом фільтр відсіяв забагато (захист від помилок)
+            // захист
             if (filteredPool.Count == 0) filteredPool = allExercises;
 
-            // Б. Перемішуємо пул вправ (щоб тренування не були однаковими)
+            // Б. Пперемішка вправ
             Random rnd = new Random();
             var shuffledPool = filteredPool.OrderBy(x => rnd.Next()).ToList();
 
-            // В. Визначаємо кількість вправ на день залежно від повзунка Інтенсивності (від 1 до 5)
-            // Рівень 1 = 3 вправи, Рівень 3 = 5 вправ, Рівень 5 = 7 вправ
+            // В. кількість вправ від навантаження
             int exercisesPerDay = 2 + currentUser.IntensityLevel;
 
-            // Г. Розподіляємо вправи по днях
+            // Г. вправи по дням
             WeeklyPlan newPlan = new WeeklyPlan();
             int poolIndex = 0;
 
@@ -165,16 +158,16 @@ namespace SmartTrain
                 {
                     var originalEx = shuffledPool[poolIndex % shuffledPool.Count];
 
-                    // Створюємо "глибоку копію" вправи через JSON, щоб змінити їй параметри ізольовано від бази
+                    // копія вправ
                     string exJson = JsonSerializer.Serialize(originalEx);
                     var clonedEx = JsonSerializer.Deserialize<Exercise>(exJson);
 
                     if (clonedEx != null)
                     {
-                        // 1. Математика підходів: (Навантаження 1 = 2 підходи, Нав. 3 = 4 підходи, Нав. 5 = 6 підходів)
+                        // 1. математика підходів
                         clonedEx.Sets = currentUser.IntensityLevel + 1;
 
-                        // 2. Математика часу: Базовий час ділимо на стандартні 3 підходи і множимо на нові підходи
+                        // 2. математика часу
                         int timePerOneSet = Math.Max(1, originalEx.EstimatedTimeMinutes / 3);
                         clonedEx.EstimatedTimeMinutes = timePerOneSet * clonedEx.Sets;
 
@@ -186,12 +179,12 @@ namespace SmartTrain
                 newPlan.Workouts.Add(dailyWorkout);
             }
 
-            // Д. Зберігаємо згенерований розклад у файл
+            // Д. розклад зберігається у файл
             string planPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "weekly_calendar.json");
             string planJson = JsonSerializer.Serialize(newPlan, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(planPath, planJson);
 
-            // Оновлюємо інтерфейс календаря
+            // онвлення календаря
             RenderCalendar();
         }
 
@@ -200,7 +193,7 @@ namespace SmartTrain
 
         private void RenderCalendar()
         {
-            // Читаємо план з файлу
+            // план з файлу
             if (File.Exists(calendarPath))
             {
                 string json = File.ReadAllText(calendarPath);
@@ -210,13 +203,13 @@ namespace SmartTrain
             var week = new List<CalendarDay>();
             var dayNames = new[] { "Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб" };
 
-            // Будуємо 7 квадратиків (від Понеділка до Неділі)
+            // блоки днів
             for (int i = 1; i <= 7; i++)
             {
                 int dayIndex = i % 7;
                 DayOfWeek currentDay = (DayOfWeek)dayIndex;
 
-                // Перевіряємо, чи є цей день у нашому збереженому плані
+                // перевірка чи є день у файлі
                 bool hasTraining = currentWeeklyPlan.Workouts.Any(w => w.Day == currentDay);
                 var workout = currentWeeklyPlan.Workouts.FirstOrDefault(w => w.Day == currentDay); // Знаходимо тренування
 
@@ -225,12 +218,13 @@ namespace SmartTrain
                     Day = currentDay,
                     DayName = dayNames[dayIndex],
                     IsTrainingDay = hasTraining,
-                    IsDayCompleted = workout?.IsDayCompleted ?? false, // Передаємо статус
-                    CompletionPercentage = workout?.CompletionPercentage ?? 0 // Передаємо відсоток
+                    IsDayCompleted = workout?.IsDayCompleted ?? false, // статус
+                    CompletionPercentage = workout?.CompletionPercentage ?? 0 // відсоток
                 });
             }
 
             WeekCalendar.ItemsSource = week;
+            CheckIfWeekIsCompleted();
         }
 
         private void WeekCalendar_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -239,7 +233,7 @@ namespace SmartTrain
 
             if (selectedDay != null && selectedDay.IsTrainingDay)
             {
-                // Шукаємо тренування для цього конкретного дня
+                // пошук тренування для цього дня
                 var workoutForDay = currentWeeklyPlan.Workouts.FirstOrDefault(w => w.Day == selectedDay.Day);
 
                 if (workoutForDay != null)
@@ -256,45 +250,39 @@ namespace SmartTrain
         }
 
 
-        // Цей метод можна викликати з MainWindow, щоб показати вікно налаштувань
         public async void OpenGoalSetupDialog()
         {
-            // 1. РОЗУМНА ПЕРЕВІРКА РІВНЯ (захист від друкарських помилок у JSON)
+            // РОЗУМНА ПЕРЕВІРКА РІВНЯ
             string level = currentUser.FitnessLevel?.ToLower() ?? "";
-
             if (level.Contains("серед") || level.Contains("intermediate"))
                 requiredDays = 4;
             else if (level.Contains("проф") || level.Contains("pro") || level.Contains("просунутий"))
                 requiredDays = 5;
             else
-                requiredDays = 3; // Для Початківців
+                requiredDays = 3;
 
             DaysRequirementText.Text = $"Ваш рівень передбачає {requiredDays} дні(в) тренувань:";
 
-            // 2. Скидаємо старий вибір днів (щоб не було багів з лічильником)
+            // скидання старих днів
             selectedDaysCount = 0;
             DaysWarningText.Text = "";
             SetupGoalDialog.IsPrimaryButtonEnabled = false;
 
-            // Знімаємо галочки з усіх кнопок тижня
+            // знімання всіх галочок
             foreach (var element in DaysTogglePanel.Children)
             {
                 if (element is ToggleButton tb)
-                {
-                    tb.IsChecked = false;
-                }
+                {tb.IsChecked = false;}
             }
 
-            // Відновлюємо повзунок навантаження
             IntensitySlider.Value = currentUser.IntensityLevel > 0 ? currentUser.IntensityLevel : 3;
-
-            // 3. Відкриваємо вікно
+            // відкриваємо вікно
             SetupGoalDialog.XamlRoot = this.Content.XamlRoot;
             await SetupGoalDialog.ShowAsync();
         }
 
 
-        // Обробка кнопок "Виконано" / "Пропущено"
+        // Виконано / Пропущено
         private void MarkDone_Click(object sender, RoutedEventArgs e) => UpdateExerciseStatus(sender, true);
         private void MarkFailed_Click(object sender, RoutedEventArgs e) => UpdateExerciseStatus(sender, false);
 
@@ -306,7 +294,6 @@ namespace SmartTrain
             {
                 ex.IsCompleted = status;
 
-                // Трюк для оновлення UI (щоб змінився колір фону)
                 var temp = DayExercisesList.ItemsSource;
                 DayExercisesList.ItemsSource = null;
                 DayExercisesList.ItemsSource = temp;
@@ -315,8 +302,7 @@ namespace SmartTrain
             }
         }
 
-        // Перевіряємо, чи всі вправи мають статус (відмічені). Якщо так - показуємо кнопку "Завершити"
-        // Перевіряємо, чи всі вправи мають статус (відмічені).
+        // якщо всі вправи виконані, то кнопка завершення дня
         private void CheckIfDayCanBeCompleted()
         {
             var selectedDay = WeekCalendar.SelectedItem as CalendarDay;
@@ -325,19 +311,19 @@ namespace SmartTrain
             var workout = currentWeeklyPlan.Workouts.FirstOrDefault(w => w.Day == selectedDay.Day);
             if (workout != null && !workout.IsDayCompleted)
             {
-                // Перевіряємо, чи НЕ залишилося вправ зі статусом null
+                // перевірка вправ на статус null
                 bool allMarked = workout.Exercises.All(e => e.IsCompleted != null);
                 CompleteDayBtn.Visibility = allMarked ? Visibility.Visible : Visibility.Collapsed;
             }
             else
             {
-                // Ховаємо кнопку, якщо день вже завершено
+                // виданення кнопки, коли день вже завершено
                 CompleteDayBtn.Visibility = Visibility.Collapsed;
             }
         }
 
 
-        // Кнопка "Завершити день"
+        // кнопка "завершити день"
         private void CompleteDayBtn_Click(object sender, RoutedEventArgs e)
         {
             var selectedDay = WeekCalendar.SelectedItem as CalendarDay;
@@ -345,23 +331,39 @@ namespace SmartTrain
 
             if (workout != null)
             {
-                // Рахуємо відсоток успішних
+                // відсоток успішних
                 int total = workout.Exercises.Count;
                 int success = workout.Exercises.Count(ex => ex.IsCompleted == true);
 
                 workout.CompletionPercentage = (int)Math.Round((double)success / total * 100);
                 workout.IsDayCompleted = true;
 
-                // Ховаємо кнопку
+                // видалення кнопку
                 CompleteDayBtn.Visibility = Visibility.Collapsed;
 
-                // ЗБЕРІГАЄМО ІСТОРІЮ
+                // перевірка для вогника
+                if (currentUser.LastWorkoutDate.Date != DateTime.Now.Date)
+                {
+                    currentUser.CurrentStreak++; // +1 день серії
+
+                    // перевірка рекорда
+                    if (currentUser.CurrentStreak > currentUser.RecordStreak)
+                    {
+                        currentUser.RecordStreak = currentUser.CurrentStreak;
+                    }
+
+                    currentUser.LastWorkoutDate = DateTime.Now; // запис дати
+
+                    // оновлений профіль
+                    string profileJson = JsonSerializer.Serialize(currentUser, new JsonSerializerOptions { WriteIndented = true });
+                    File.WriteAllText(profilePath, profileJson);
+                }
+
+                // ІСТОРІЯ
                 SaveWeekHistory();
-
-                // Оновлюємо календар (щоб з'явилась галочка і відсоток)
+                // онов календар
                 RenderCalendar();
-
-                // Перевіряємо, чи весь тиждень завершено
+                // перевірка всього тижня
                 CheckIfWeekIsCompleted();
             }
         }
@@ -369,7 +371,7 @@ namespace SmartTrain
 
         private void CheckIfWeekIsCompleted()
         {
-            // Перевіряємо, що план взагалі існує, перш ніж перевіряти його завершеність
+            // перевірка чи є план
             if (currentWeeklyPlan.Workouts.Count > 0)
             {
                 bool isWeekDone = currentWeeklyPlan.Workouts.All(w => w.IsDayCompleted);
@@ -377,30 +379,30 @@ namespace SmartTrain
             }
         }
 
-        // Логіка збереження в окрему папку
+        // збереження в папку History
         private void SaveWeekHistory()
         {
             string historyFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "History");
             if (!Directory.Exists(historyFolder)) Directory.CreateDirectory(historyFolder);
 
-            // Назва файлу: Week_1_20260330.json
+            // генерація назви
             string fileName = $"Week_{currentWeeklyPlan.WeekNumber}_{DateTime.Now:yyyyMMdd}.json";
             string filePath = Path.Combine(historyFolder, fileName);
 
             string json = JsonSerializer.Serialize(currentWeeklyPlan, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(filePath, json);
 
-            // Також зберігаємо поточний план, щоб програма його пам'ятала при перезапуску
+            // збрігання плану
             File.WriteAllText(calendarPath, json);
         }
 
-        // Кнопка "Наступний тиждень"
+        // кнопка "Наступний тиждень"
         private void NextWeekBtn_Click(object sender, RoutedEventArgs e)
         {
-            // Збільшуємо тиждень
+            // в кінець тиждень
             currentWeeklyPlan.WeekNumber++;
 
-            // Скидаємо статуси всіх днів та вправ для нового кола
+            // скидання всього
             foreach (var workout in currentWeeklyPlan.Workouts)
             {
                 workout.IsDayCompleted = false;
@@ -411,7 +413,7 @@ namespace SmartTrain
                 }
             }
 
-            SaveWeekHistory(); // Зберігаємо чистий план як старт нового тижня
+            SaveWeekHistory(); // новий план тижня
             NextWeekBtn.Visibility = Visibility.Collapsed;
             DayExercisesList.ItemsSource = null;
             SelectedDayTitle.Text = $"Тиждень {currentWeeklyPlan.WeekNumber} розпочато!";

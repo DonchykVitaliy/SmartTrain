@@ -30,7 +30,7 @@ namespace SmartTrain
             LoadPlan();
         }
 
-        // Додаємо змінну для зберігання поточного плану на рівні класу сторінки
+        // додає змінну для зберігання поточного плану на рівні класу сторінки
         private UserPlan currentPlan;
         private string planPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "my_plan.json");
 
@@ -40,14 +40,14 @@ namespace SmartTrain
 
             if (File.Exists(planPath))
             {
-                // Читаємо план з JSON
+                //план з JSON
                 string json = File.ReadAllText(planPath);
                 currentPlan = JsonSerializer.Deserialize<UserPlan>(json);
 
                 if (currentPlan != null && currentPlan.Exercises != null)
                 {
-                    PageTitle.Text = "Список всіх вправ для тренувань"; // Ставимо назву плану в заголовок
-                    ExercisesGridView.ItemsSource = currentPlan.Exercises; // Завантажуємо вправи у картки
+                    PageTitle.Text = "Список всіх вправ для тренувань";
+                    ExercisesGridView.ItemsSource = currentPlan.Exercises; //   вправи у картки
                 }
             }
             else
@@ -58,21 +58,20 @@ namespace SmartTrain
 
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
-            // Отримуємо вправу, прив'язану до картки, на якій натиснули кнопку
+            // вправа
             var button = sender as Button;
             var exerciseToDelete = button?.DataContext as Exercise;
 
             if (exerciseToDelete != null && currentPlan != null)
             {
-                // 1. Видаляємо з масиву
+                // видаляємо з масиву
                 currentPlan.Exercises.Remove(exerciseToDelete);
 
-                // 2. Оновлюємо відображення на екрані
-                // (Перепризначаємо ItemsSource, щоб GridView побачив зміни)
+                // оновлення
                 ExercisesGridView.ItemsSource = null;
                 ExercisesGridView.ItemsSource = currentPlan.Exercises;
 
-                // 3. Перезаписуємо JSON файл
+                // збр JSON файл
                 string json = JsonSerializer.Serialize(currentPlan, new JsonSerializerOptions { WriteIndented = true });
                 File.WriteAllText(planPath, json);
             }
@@ -81,30 +80,30 @@ namespace SmartTrain
 
         private async void ClearPlanBtn_Click(object sender, RoutedEventArgs e)
 {
-    // Показуємо діалог підтвердження
+    // діалог підтвердження
     ConfirmDeleteDialog.XamlRoot = this.Content.XamlRoot;
     await ConfirmDeleteDialog.ShowAsync();
 }
 
 private void ConfirmDeleteDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
 {
-    // 1. Видаляємо файл плану з пристрою
+    // видалення файлу
     if (File.Exists(planPath))
     {
         File.Delete(planPath);
     }
 
-    // 2. Очищуємо дані в пам'яті програми
+    // з пам'яті програми
     if (currentPlan != null)
     {
         currentPlan.Exercises.Clear();
     }
 
-    // 3. Оновлюємо інтерфейс
+    // інтерфейс
     ExercisesGridView.ItemsSource = null;
     PageTitle.Text = "План очищено. Створіть новий!";
     
-    // Ховаємо кнопку очищення, бо план вже порожній
+    // кнопка очищення прибрана
     ClearPlanBtn.Visibility = Visibility.Collapsed;
 }
     }

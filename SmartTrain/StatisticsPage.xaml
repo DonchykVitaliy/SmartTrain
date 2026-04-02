@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="SmartTrain.StatisticsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SmartTrain"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer Padding="20">
+        <StackPanel Spacing="20">
+            <TextBlock x:Name="PageTitleText" Text="Статистика користувача" FontSize="28" FontWeight="Bold" Margin="0,0,0,10"/>
+
+            <Grid ColumnSpacing="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" CornerRadius="8" Padding="20">
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="Фізичні показники ⚖️" FontSize="18" FontWeight="SemiBold"/>
+
+                        <StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+                            <TextBlock Text="Вага (кг):" VerticalAlignment="Center" Foreground="Gray"/>
+                            <TextBox x:Name="WeightInput" Width="70" TextAlignment="Center"/>
+                            <Button Content="Оновити" Click="UpdateWeight_Click" Style="{StaticResource AccentButtonStyle}"/>
+                        </StackPanel>
+
+                        <TextBlock x:Name="HeightText" Text="Зріст: 0 см" Foreground="Gray"/>
+
+                        <StackPanel Orientation="Horizontal" Spacing="5">
+                            <TextBlock Text="Індекс маси тіла (ІМТ):" Foreground="Gray"/>
+                            <TextBlock x:Name="BmiText" Text="0.0" FontWeight="Bold"/>
+                            <TextBlock x:Name="BmiStatusText" Text="(Норма)" Foreground="{ThemeResource SystemAccentColor}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" CornerRadius="8" Padding="20">
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="Поточний план 📋" FontSize="18" FontWeight="SemiBold"/>
+
+                        <TextBlock x:Name="GoalText" Text="Ціль: Не обрано" FontWeight="Bold"/>
+                        <TextBlock x:Name="IntensityText" Text="Рівень навантаження: 0" Foreground="Gray"/>
+
+                        <TextBlock Text="Тренувальні дні:" Margin="0,5,0,0"/>
+                        <TextBlock x:Name="TrainingDaysText" Text="Немає" Foreground="{ThemeResource SystemAccentColor}" FontWeight="SemiBold" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <Grid ColumnSpacing="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" CornerRadius="8" Padding="20">
+                    <StackPanel Spacing="15">
+                        <TextBlock Text="Об'єм тренувань 🏋️‍♂️" FontSize="18" FontWeight="SemiBold"/>
+
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <TextBlock Text="⏱️ Загальний час:" Width="140" Foreground="Gray"/>
+                            <TextBlock x:Name="TotalTimeText" Text="0 хв" FontWeight="Bold"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <TextBlock Text="📅 Закрито днів:" Width="140" Foreground="Gray"/>
+                            <TextBlock x:Name="TotalDaysText" Text="0" FontWeight="Bold"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <TextBlock Text="🔄 Всього підходів:" Width="140" Foreground="Gray"/>
+                            <TextBlock x:Name="TotalSetsText" Text="0" FontWeight="Bold"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" CornerRadius="8" Padding="20">
+                    <StackPanel Spacing="15">
+                        <TextBlock Text="Ефективність 📈" FontSize="18" FontWeight="SemiBold"/>
+
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <TextBlock Text="🔥 Поточна серія:" Width="140" Foreground="Gray"/>
+                            <TextBlock x:Name="CurrentStreakText" Text="0 днів" FontWeight="Bold"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <TextBlock Text="🏆 Рекорд серії:" Width="140" Foreground="Gray"/>
+                            <TextBlock x:Name="RecordStreakText" Text="0 днів" FontWeight="Bold"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Spacing="10" Margin="0,5,0,0">
+                            <TextBlock Text="🎯 Середня якість:" Width="140" Foreground="Gray" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="AverageQualityText" Text="0%" FontSize="22" FontWeight="Bold" Foreground="{ThemeResource SystemAccentColor}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <Grid ColumnSpacing="20" Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" CornerRadius="8" Padding="20">
+                    <StackPanel Spacing="15">
+                        <TextBlock Text="Активність за поточний тиждень (хв) 📊" FontSize="18" FontWeight="SemiBold"/>
+
+                        <ItemsControl x:Name="ActivityChart" HorizontalAlignment="Center" Margin="0,10,0,0">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal" Spacing="25" VerticalAlignment="Bottom"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel VerticalAlignment="Bottom" Spacing="5">
+                                        <TextBlock Text="{Binding Value}" HorizontalAlignment="Center" Foreground="Gray" FontSize="12"/>
+                                        <Border Width="35" Height="{Binding BarHeight}" Background="{ThemeResource SystemAccentColor}" CornerRadius="4,4,0,0" VerticalAlignment="Bottom"/>
+                                        <TextBlock Text="{Binding Label}" HorizontalAlignment="Center" FontWeight="SemiBold"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" CornerRadius="8" Padding="20">
+                    <StackPanel Spacing="15" HorizontalAlignment="Center">
+                        <TextBlock Text="Успішність вправ 🍕" FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+
+                        <Grid Width="140" Height="140" Margin="0,10,0,0">
+                            <ProgressRing Value="100" Minimum="0" Maximum="100" Width="140" Height="140" Foreground="#40D15A5A" IsIndeterminate="False"/>
+                            <ProgressRing x:Name="SuccessRing" Value="0" Minimum="0" Maximum="100" Width="140" Height="140" Foreground="#90EE90" IsIndeterminate="False"/>
+
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBlock x:Name="SuccessRingText" Text="0%" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center"/>
+                                <TextBlock Text="Виконано" FontSize="12" Foreground="Gray" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Grid>
+
+                        <StackPanel Orientation="Horizontal" Spacing="15" HorizontalAlignment="Center" Margin="0,10,0,0">
+                            <StackPanel Orientation="Horizontal" Spacing="5">
+                                <Ellipse Width="10" Height="10" Fill="#90EE90"/>
+                                <TextBlock Text="Успішно" FontSize="12"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Spacing="5">
+                                <Ellipse Width="10" Height="10" Fill="#D15A5A"/>
+                                <TextBlock Text="Пропущено" FontSize="12"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

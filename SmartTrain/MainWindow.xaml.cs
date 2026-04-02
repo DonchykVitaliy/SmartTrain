@@ -29,15 +29,15 @@ namespace SmartTrain
     {
         //таймер
         private DispatcherTimer _achievementTimer;
-        // НОВІ ЗМІННІ ДЛЯ ЧЕРГИ ДОСЯГНЕНЬ
+        //ЧЕРГИ ДОСЯГНЕНЬ
         private Queue<Achievement> _achievementQueue = new Queue<Achievement>();
         private bool _isAchievementDialogOpen = false;
-        // Створюємо "невидимий" плеєр для звуків
+        //плеєр для звуків
         private MediaPlayer _mediaPlayer = new MediaPlayer();
 
         private string profilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "user_profile.json");
         private string calendarPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "weekly_calendar.json");
-        // Для об'єкта користувача
+
         public UserProfile CurrentUser { get; set; } = default!;
 
         public MainWindow()
@@ -45,7 +45,7 @@ namespace SmartTrain
             this.InitializeComponent();
             CheckUserProfile();
 
-            // Підписуємося на подію розблокування досягнення
+            // подія досягнень
             AchievementManager.OnAchievementUnlocked += ShowAchievementPopup;
             // НАЛАШТУВАННЯ ТАЙМЕРА
             _achievementTimer = new DispatcherTimer();
@@ -58,16 +58,15 @@ namespace SmartTrain
         {
             if (File.Exists(profilePath))
             {
-                // Якщо файл є — завантажуємо його
+                // перевірка профілю
                 string json = File.ReadAllText(profilePath);
                 CurrentUser = JsonSerializer.Deserialize<UserProfile>(json);
 
-                // Показуємо головне меню та ім'я користувача
                 ShowMainApp();
             }
             else
             {
-                // Якщо файлу немає — приховуємо меню і показуємо форму реєстрації
+                // вікно регістрації
                 MainNav.Visibility = Visibility.Collapsed;
                 ShowRegistrationForm();
             }
@@ -76,18 +75,17 @@ namespace SmartTrain
         private void ShowMainApp()
         {
             MainNav.Visibility = Visibility.Visible;
-            // Можна змінити заголовок меню на ім'я користувача
             MainNav.PaneTitle = $"Профіль: {CurrentUser.UserName}";
 
 
-            // Автоматично вибираємо перший пункт (Головна сторінка)
+            // відкриття головної сторінки
             MainNav.SelectedItem = MainNav.MenuItems[0];
             ContentFrame.Navigate(typeof(HomePage));
         }
 
         private void SaveProfile_Click(object sender, RoutedEventArgs e)
         {
-            // Створюємо об'єкт з введених даних
+            // файл профілю
             CurrentUser = new UserProfile
             {
                 UserName = RegName.Text,
@@ -97,11 +95,11 @@ namespace SmartTrain
                 FitnessLevel = (RegLevel.SelectedItem as ComboBoxItem)?.Content.ToString()
             };
 
-            // Серіалізуємо в JSON
+            // формат в JSON
             string json = JsonSerializer.Serialize(CurrentUser, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(profilePath, json);
 
-            // Ховаємо реєстрацію, показуємо додаток
+            // закриття реєстрації
             RegistrationArea.Visibility = Visibility.Collapsed;
             ShowMainApp();
         }
@@ -111,18 +109,16 @@ namespace SmartTrain
             RegistrationArea.Visibility = Visibility.Visible;
         }
 
-        // 1. Відкриття діалогу з поточними даними
         private async void ProfileItem_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            EditProfileDialog.XamlRoot = this.Content.XamlRoot; // Необхідно для WinUI 3
+            EditProfileDialog.XamlRoot = this.Content.XamlRoot; // тре для WinUI 3
 
-            // Заповнюємо поля поточними даними
+            // поля поточними даними
             EditName.Text = CurrentUser.UserName;
             EditAge.Value = CurrentUser.Age;
             EditWeight.Value = CurrentUser.Weight;
             EditHeight.Value = CurrentUser.Height;
 
-            // Встановлюємо правильний індекс у ComboBox
             foreach (ComboBoxItem item in EditLevel.Items)
             {
                 if (item.Content.ToString() == CurrentUser.FitnessLevel)
@@ -135,7 +131,7 @@ namespace SmartTrain
             await EditProfileDialog.ShowAsync();
         }
 
-        // 2. Збереження змінених даних
+        // зміна профілю
         private void EditProfileDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
         {
             CurrentUser.UserName = EditName.Text;
@@ -144,15 +140,15 @@ namespace SmartTrain
             CurrentUser.Height = EditHeight.Value;
             CurrentUser.FitnessLevel = (EditLevel.SelectedItem as ComboBoxItem)?.Content.ToString();
 
-            // Перезаписуємо JSON
+            // JSON
             string json = JsonSerializer.Serialize(CurrentUser, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(profilePath, json);
 
-            // Оновлюємо заголовок панелі
+            // оновлення сторінки
             ShowMainApp();
         }
 
-        // 3. Видалення профілю
+        // видалення профілю
         private void EditProfileDialog_CloseButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
         {
             if (File.Exists(profilePath))
@@ -162,7 +158,7 @@ namespace SmartTrain
 
             CurrentUser = null;
 
-            // Повертаємо програму до стану "без профілю"
+            // назад до реєстрації
             MainNav.Visibility = Visibility.Collapsed;
             ShowRegistrationForm();
         }
@@ -176,16 +172,16 @@ namespace SmartTrain
             await BuildPlanDialog.ShowAsync();
         }
 
+        //будуємо план
         private async void BuildPlanDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
         {
-            // 1. Отримуємо вибір користувача з ComboBox
             var selectedLocation = (TrainingType)SelectLocation.SelectedIndex; // 0 - Home, 1 - Gym
             var selectedMaxDiff = (DifficultyLevel)SelectDifficulty.SelectedIndex; // 0 - Easy, 1 - AboveAverage, 2 - Hard
 
-            // 2. Отримуємо базу вправ
+            // база вправ
             var allExercises = ExerciseRepository.GetDefaultExercises();
 
-            // 3. Застосовуємо розширену логіку фільтрації
+            // фільтрація
             var filtered = allExercises.Where(ex => {
 
                 // --- ЛОГІКА СКЛАДНОСТІ ---
@@ -204,10 +200,10 @@ namespace SmartTrain
                 }
                 else if (selectedLocation == TrainingType.Gym)
                 {
-                    locationMatches = true; // У залі можна робити все
+                    locationMatches = true; // в залі можна робити все
                 }
 
-                // --- ЛОГІКА ПРОФІЛЮ (Фізичні параметри) ---
+
                 bool profileMatches =
                     CurrentUser.Age >= ex.AgeRange[0] && CurrentUser.Age <= ex.AgeRange[1] &&
                     CurrentUser.Weight >= ex.MinWeight && CurrentUser.Weight <= ex.MaxWeight &&
@@ -216,7 +212,7 @@ namespace SmartTrain
                 return difficultyMatches && locationMatches && profileMatches;
             }).ToList();
 
-            // 4. Збереження результату
+            // збереження
             UserPlan newPlan = new UserPlan
             {
                 PlanName = "Список всіх вправ для тренувань",
@@ -226,14 +222,13 @@ namespace SmartTrain
             string json = JsonSerializer.Serialize(newPlan, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(planPath, json);
 
-            // Даємо час на закриття поточного діалогу
             await Task.Delay(200);
 
             PlanSuccessTip.Subtitle = $"Підібрано вправ: {filtered.Count}. Тепер ви можете побачити їх у розділі Тренування.";
             PlanSuccessTip.IsOpen = true;
         }
 
-        // Допоміжний метод для швидких повідомлень
+        // метод для повідомлень
         private async void ShowMessage(string title, string content)
         {
             ContentDialog dialog = new ContentDialog
@@ -249,24 +244,25 @@ namespace SmartTrain
 
         private void MainNav_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
-            // Перевіряємо, чи натиснуто на звичайний пункт меню
+            // меню навігації
             if (args.SelectedItem is NavigationViewItem item)
             {
-                // Вмикаємо кнопку тільки якщо відкрита вкладка "Ціль"
+                // лише коли відкрита ЦІЛЬ
                 ChangeGoalButton.Visibility = item.Tag?.ToString() == "GoalPage" ? Visibility.Visible : Visibility.Collapsed;
 
                 switch (item.Tag)
                 {
-                    case "HomePage": // <--- ДОДАЛИ ЦЕ
+                    case "HomePage":
                         ContentFrame.Navigate(typeof(HomePage));
                         break;
                     case "WorkoutPage":
-                        // Завантажуємо створену нами сторінку у Frame
                         ContentFrame.Navigate(typeof(WorkoutPage));
                         break;
 
                     case "GoalPage": 
                         ContentFrame.Navigate(typeof(GoalPage)); break;
+                    case "StatsPage":
+                        ContentFrame.Navigate(typeof(StatisticsPage)); break;
                     case "AchievementsPage":
                         ContentFrame.Navigate(typeof(AchievementsPage)); break;
                 }
@@ -276,7 +272,7 @@ namespace SmartTrain
 
         private void ChangeGoalButton_Click(object sender, RoutedEventArgs e)
         {
-            // Перевіряємо, чи зараз у Frame завантажена саме сторінка GoalPage
+            // перевірка на GoalPage
             if (ContentFrame.Content is GoalPage goalPage)
             {
                 goalPage.OpenGoalSetupDialog();
@@ -288,7 +284,7 @@ namespace SmartTrain
 
         private void AchievementTimer_Tick(object sender, object e)
         {
-            // 1. Завантажуємо свіжі дані профілю та плану з файлів
+            // завантаження всіх файлів для досягнень
             if (File.Exists(profilePath))
             {
                 try
@@ -303,7 +299,7 @@ namespace SmartTrain
                         plan = JsonSerializer.Deserialize<WeeklyPlan>(planJson);
                     }
 
-                    // 2. Викликаємо перевірку
+                    // перевірка
                     if (user != null)
                     {
                         AchievementManager.CheckAchievements(user, plan);
@@ -318,17 +314,17 @@ namespace SmartTrain
 
 
 
-        // Цей метод викликається автоматично, коли алгоритм знаходить нове досягнення
+        // нове досягнення
         private void ShowAchievementPopup(Achievement ach)
         {
             this.DispatcherQueue.TryEnqueue(() =>
             {
-                _achievementQueue.Enqueue(ach); // Ставимо в чергу
-                ProcessAchievementQueue();      // Запускаємо конвеєр
+                _achievementQueue.Enqueue(ach); // ставимо у чергу
+                ProcessAchievementQueue();      // конвеєр
             });
         }
 
-        // Цей метод бере досягнення з черги по одному
+        // цей метод бере досягнення з черги по одному
         private async void ProcessAchievementQueue()
         {
             // Якщо вікно ВЖЕ відкрите, або черга порожня - нічого не робимо
@@ -350,30 +346,25 @@ namespace SmartTrain
 
             PlayAchievementSound();
 
-            // МАГІЯ ТУТ: Код "чекає", поки користувач не натисне кнопку "Отримати"
             await AchievementPopupDialog.ShowAsync();
 
-            // Коли користувач закрив вікно:
-            _isAchievementDialogOpen = false; // Знімаємо блок
-            ProcessAchievementQueue(); // Викликаємо себе ж, щоб перевірити, чи є ще щось у черзі
+            _isAchievementDialogOpen = false; // знімає блок
+            ProcessAchievementQueue(); // викликаємо себе ж для черги
         }
 
-        // Обробка кнопки "Отримати"
+        // кнопка "Отримати"
         private void AchievementPopupDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
-        {
-            // У ContentDialog при натисканні Primary/Secondary кнопки вікно закривається автоматично.
-            // TODO: Якщо ми хочемо тут додати якусь додаткову анімацію закриття, ми можемо це зробити.
-            // Diagnostics.Debug.WriteLine("Діалог досягнення закривається по кнопці 'Отримати'.");
+        { //пусто бо ніц не треба))
         }
 
         private void PlayAchievementSound()
         {
             try
             {
-                // Вказуємо шлях до нашого файлу в папці Assets
+                // звук в папці Assets
                 var uri = new Uri("ms-appx:///Assets/achievement.mp3");
 
-                // Завантажуємо файл у плеєр та одразу запускаємо
+                // звук у плеєр
                 _mediaPlayer.Source = MediaSource.CreateFromUri(uri);
                 _mediaPlayer.Play();
             }
